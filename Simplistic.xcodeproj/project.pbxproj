@@ -1,0 +1,1041 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 47;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8927491A1B793860004F2EAD /* ItemsRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892749191B793860004F2EAD /* ItemsRowController.swift */; };
+		895A1B0F1B7A94D000070CF1 /* MainTableViewController+WCSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895A1B0E1B7A94D000070CF1 /* MainTableViewController+WCSessionDelegate.swift */; };
+		895A1B111B7A9BCD00070CF1 /* InterfaceController+WCSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895A1B101B7A9BCD00070CF1 /* InterfaceController+WCSessionDelegate.swift */; };
+		899106B21B694E4000D861B1 /* SimplisticModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 899106B01B694E4000D861B1 /* SimplisticModel.xcdatamodeld */; };
+		899106B41B697D7A00D861B1 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 899106B31B697D7A00D861B1 /* CoreData.framework */; };
+		899106BB1B702E2600D861B1 /* MainTableViewController+CloudKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899106BA1B702E2600D861B1 /* MainTableViewController+CloudKit.swift */; };
+		89A8FFBB1B918C9E00DC6F99 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89A8FFBA1B918C9E00DC6F99 /* iAd.framework */; };
+		89CEEF151B3E3AAE00063FA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CEEF141B3E3AAE00063FA6 /* AppDelegate.swift */; };
+		89CEEF171B3E3AAE00063FA6 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CEEF161B3E3AAE00063FA6 /* MainTableViewController.swift */; };
+		89CEEF1A1B3E3AAE00063FA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89CEEF181B3E3AAE00063FA6 /* Main.storyboard */; };
+		89CEEF1C1B3E3AAE00063FA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89CEEF1B1B3E3AAE00063FA6 /* Assets.xcassets */; };
+		89CEEF1F1B3E3AAE00063FA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89CEEF1D1B3E3AAE00063FA6 /* LaunchScreen.storyboard */; };
+		89CEEF2A1B3E3AAE00063FA6 /* SimplisticTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CEEF291B3E3AAE00063FA6 /* SimplisticTests.swift */; };
+		89CEEF351B3E3AAE00063FA6 /* SimplisticUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CEEF341B3E3AAE00063FA6 /* SimplisticUITests.swift */; };
+		89CEEF3A1B3E3AAE00063FA6 /* Simplistic.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 89CEEF391B3E3AAE00063FA6 /* Simplistic.app */; };
+		89CEEF401B3E3AAE00063FA6 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89CEEF3E1B3E3AAE00063FA6 /* Interface.storyboard */; };
+		89CEEF421B3E3AAE00063FA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89CEEF411B3E3AAE00063FA6 /* Assets.xcassets */; };
+		89CEEF491B3E3AAE00063FA6 /* Simplistic WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 89CEEF481B3E3AAE00063FA6 /* Simplistic WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		89CEEF501B3E3AAE00063FA6 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CEEF4F1B3E3AAE00063FA6 /* InterfaceController.swift */; };
+		89CEEF521B3E3AAE00063FA6 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CEEF511B3E3AAE00063FA6 /* ExtensionDelegate.swift */; };
+		89CEEF541B3E3AAE00063FA6 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CEEF531B3E3AAE00063FA6 /* NotificationController.swift */; };
+		89CEEF561B3E3AAF00063FA6 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CEEF551B3E3AAF00063FA6 /* GlanceController.swift */; };
+		89CEEF581B3E3AAF00063FA6 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CEEF571B3E3AAF00063FA6 /* ComplicationController.swift */; };
+		89CEEF5A1B3E3AAF00063FA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89CEEF591B3E3AAF00063FA6 /* Assets.xcassets */; };
+		89CEEF761B3E3CA500063FA6 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CEEF751B3E3CA500063FA6 /* ShareViewController.swift */; };
+		89CEEF791B3E3CA500063FA6 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89CEEF771B3E3CA500063FA6 /* MainInterface.storyboard */; };
+		89CEEF7D1B3E3CA500063FA6 /* Simplistic Sharing Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 89CEEF731B3E3CA500063FA6 /* Simplistic Sharing Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		89CEEF851B3E3D5F00063FA6 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CEEF841B3E3D5F00063FA6 /* MainTableViewCell.swift */; };
+		89E0A0F21B92C21A0078AD71 /* MainTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E0A0F11B92C21A0078AD71 /* MainTableView.swift */; settings = {ASSET_TAGS = (); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		89CEEF261B3E3AAE00063FA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 89CEEF091B3E3AAE00063FA6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 89CEEF101B3E3AAE00063FA6;
+			remoteInfo = Simplistic;
+		};
+		89CEEF311B3E3AAE00063FA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 89CEEF091B3E3AAE00063FA6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 89CEEF101B3E3AAE00063FA6;
+			remoteInfo = Simplistic;
+		};
+		89CEEF3B1B3E3AAE00063FA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 89CEEF091B3E3AAE00063FA6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 89CEEF381B3E3AAE00063FA6;
+			remoteInfo = "Simplistic WatchKit App";
+		};
+		89CEEF4A1B3E3AAE00063FA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 89CEEF091B3E3AAE00063FA6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 89CEEF471B3E3AAE00063FA6;
+			remoteInfo = "Simplistic WatchKit Extension";
+		};
+		89CEEF7B1B3E3CA500063FA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 89CEEF091B3E3AAE00063FA6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 89CEEF721B3E3CA500063FA6;
+			remoteInfo = "Simplistic Sharing Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		89CEEF611B3E3AAF00063FA6 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				89CEEF491B3E3AAE00063FA6 /* Simplistic WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89CEEF651B3E3AAF00063FA6 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				89CEEF3A1B3E3AAE00063FA6 /* Simplistic.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89CEEF811B3E3CA500063FA6 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				89CEEF7D1B3E3CA500063FA6 /* Simplistic Sharing Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		892749191B793860004F2EAD /* ItemsRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsRowController.swift; sourceTree = "<group>"; };
+		8927491E1B79541D004F2EAD /* Simplistic WatchKit App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Simplistic WatchKit App.entitlements"; sourceTree = "<group>"; };
+		8927491F1B795425004F2EAD /* Simplistic WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Simplistic WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		895A1B0D1B79B60000070CF1 /* Simplistic Sharing Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Simplistic Sharing Extension.entitlements"; sourceTree = "<group>"; };
+		895A1B0E1B7A94D000070CF1 /* MainTableViewController+WCSessionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MainTableViewController+WCSessionDelegate.swift"; sourceTree = "<group>"; };
+		895A1B101B7A9BCD00070CF1 /* InterfaceController+WCSessionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InterfaceController+WCSessionDelegate.swift"; sourceTree = "<group>"; };
+		899106B11B694E4000D861B1 /* SimplisticModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SimplisticModel.xcdatamodel; sourceTree = "<group>"; };
+		899106B31B697D7A00D861B1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		899106B51B6ADC8B00D861B1 /* Simplistic.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Simplistic.entitlements; sourceTree = "<group>"; };
+		899106BA1B702E2600D861B1 /* MainTableViewController+CloudKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MainTableViewController+CloudKit.swift"; sourceTree = "<group>"; };
+		89A8FFBA1B918C9E00DC6F99 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		89CEEF111B3E3AAE00063FA6 /* Simplistic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Simplistic.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		89CEEF141B3E3AAE00063FA6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		89CEEF161B3E3AAE00063FA6 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		89CEEF191B3E3AAE00063FA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		89CEEF1B1B3E3AAE00063FA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		89CEEF1E1B3E3AAE00063FA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		89CEEF201B3E3AAE00063FA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89CEEF251B3E3AAE00063FA6 /* SimplisticTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimplisticTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		89CEEF291B3E3AAE00063FA6 /* SimplisticTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplisticTests.swift; sourceTree = "<group>"; };
+		89CEEF2B1B3E3AAE00063FA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89CEEF301B3E3AAE00063FA6 /* SimplisticUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimplisticUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		89CEEF341B3E3AAE00063FA6 /* SimplisticUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplisticUITests.swift; sourceTree = "<group>"; };
+		89CEEF361B3E3AAE00063FA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89CEEF391B3E3AAE00063FA6 /* Simplistic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Simplistic.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		89CEEF3F1B3E3AAE00063FA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		89CEEF411B3E3AAE00063FA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		89CEEF431B3E3AAE00063FA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89CEEF481B3E3AAE00063FA6 /* Simplistic WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Simplistic WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		89CEEF4E1B3E3AAE00063FA6 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		89CEEF4F1B3E3AAE00063FA6 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		89CEEF511B3E3AAE00063FA6 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		89CEEF531B3E3AAE00063FA6 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		89CEEF551B3E3AAF00063FA6 /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
+		89CEEF571B3E3AAF00063FA6 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		89CEEF591B3E3AAF00063FA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		89CEEF5B1B3E3AAF00063FA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89CEEF731B3E3CA500063FA6 /* Simplistic Sharing Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Simplistic Sharing Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		89CEEF751B3E3CA500063FA6 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		89CEEF781B3E3CA500063FA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		89CEEF7A1B3E3CA500063FA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89CEEF841B3E3D5F00063FA6 /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		89E0A0F11B92C21A0078AD71 /* MainTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		89CEEF0E1B3E3AAE00063FA6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89A8FFBB1B918C9E00DC6F99 /* iAd.framework in Frameworks */,
+				899106B41B697D7A00D861B1 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89CEEF221B3E3AAE00063FA6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89CEEF2D1B3E3AAE00063FA6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89CEEF451B3E3AAE00063FA6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89CEEF701B3E3CA500063FA6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		892749181B79383F004F2EAD /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				89CEEF4F1B3E3AAE00063FA6 /* InterfaceController.swift */,
+				895A1B101B7A9BCD00070CF1 /* InterfaceController+WCSessionDelegate.swift */,
+				892749191B793860004F2EAD /* ItemsRowController.swift */,
+			);
+			name = Interface;
+			sourceTree = "<group>";
+		};
+		89CEEF081B3E3AAE00063FA6 = {
+			isa = PBXGroup;
+			children = (
+				89A8FFBA1B918C9E00DC6F99 /* iAd.framework */,
+				899106B31B697D7A00D861B1 /* CoreData.framework */,
+				89CEEF131B3E3AAE00063FA6 /* Simplistic */,
+				89CEEF281B3E3AAE00063FA6 /* SimplisticTests */,
+				89CEEF331B3E3AAE00063FA6 /* SimplisticUITests */,
+				89CEEF3D1B3E3AAE00063FA6 /* Simplistic WatchKit App */,
+				89CEEF4C1B3E3AAE00063FA6 /* Simplistic WatchKit Extension */,
+				89CEEF741B3E3CA500063FA6 /* Simplistic Sharing Extension */,
+				89CEEF121B3E3AAE00063FA6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		89CEEF121B3E3AAE00063FA6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				89CEEF111B3E3AAE00063FA6 /* Simplistic.app */,
+				89CEEF251B3E3AAE00063FA6 /* SimplisticTests.xctest */,
+				89CEEF301B3E3AAE00063FA6 /* SimplisticUITests.xctest */,
+				89CEEF391B3E3AAE00063FA6 /* Simplistic.app */,
+				89CEEF481B3E3AAE00063FA6 /* Simplistic WatchKit Extension.appex */,
+				89CEEF731B3E3CA500063FA6 /* Simplistic Sharing Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		89CEEF131B3E3AAE00063FA6 /* Simplistic */ = {
+			isa = PBXGroup;
+			children = (
+				899106B51B6ADC8B00D861B1 /* Simplistic.entitlements */,
+				89CEEF141B3E3AAE00063FA6 /* AppDelegate.swift */,
+				89CEEF161B3E3AAE00063FA6 /* MainTableViewController.swift */,
+				895A1B0E1B7A94D000070CF1 /* MainTableViewController+WCSessionDelegate.swift */,
+				899106BA1B702E2600D861B1 /* MainTableViewController+CloudKit.swift */,
+				89E0A0F11B92C21A0078AD71 /* MainTableView.swift */,
+				89CEEF181B3E3AAE00063FA6 /* Main.storyboard */,
+				89CEEF1B1B3E3AAE00063FA6 /* Assets.xcassets */,
+				89CEEF1D1B3E3AAE00063FA6 /* LaunchScreen.storyboard */,
+				89CEEF201B3E3AAE00063FA6 /* Info.plist */,
+				89CEEF841B3E3D5F00063FA6 /* MainTableViewCell.swift */,
+				899106B01B694E4000D861B1 /* SimplisticModel.xcdatamodeld */,
+			);
+			path = Simplistic;
+			sourceTree = "<group>";
+		};
+		89CEEF281B3E3AAE00063FA6 /* SimplisticTests */ = {
+			isa = PBXGroup;
+			children = (
+				89CEEF291B3E3AAE00063FA6 /* SimplisticTests.swift */,
+				89CEEF2B1B3E3AAE00063FA6 /* Info.plist */,
+			);
+			path = SimplisticTests;
+			sourceTree = "<group>";
+		};
+		89CEEF331B3E3AAE00063FA6 /* SimplisticUITests */ = {
+			isa = PBXGroup;
+			children = (
+				89CEEF341B3E3AAE00063FA6 /* SimplisticUITests.swift */,
+				89CEEF361B3E3AAE00063FA6 /* Info.plist */,
+			);
+			path = SimplisticUITests;
+			sourceTree = "<group>";
+		};
+		89CEEF3D1B3E3AAE00063FA6 /* Simplistic WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				8927491E1B79541D004F2EAD /* Simplistic WatchKit App.entitlements */,
+				89CEEF3E1B3E3AAE00063FA6 /* Interface.storyboard */,
+				89CEEF411B3E3AAE00063FA6 /* Assets.xcassets */,
+				89CEEF431B3E3AAE00063FA6 /* Info.plist */,
+			);
+			path = "Simplistic WatchKit App";
+			sourceTree = "<group>";
+		};
+		89CEEF4C1B3E3AAE00063FA6 /* Simplistic WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				8927491F1B795425004F2EAD /* Simplistic WatchKit Extension.entitlements */,
+				892749181B79383F004F2EAD /* Interface */,
+				89CEEF511B3E3AAE00063FA6 /* ExtensionDelegate.swift */,
+				89CEEF531B3E3AAE00063FA6 /* NotificationController.swift */,
+				89CEEF551B3E3AAF00063FA6 /* GlanceController.swift */,
+				89CEEF571B3E3AAF00063FA6 /* ComplicationController.swift */,
+				89CEEF591B3E3AAF00063FA6 /* Assets.xcassets */,
+				89CEEF5B1B3E3AAF00063FA6 /* Info.plist */,
+				89CEEF4D1B3E3AAE00063FA6 /* Supporting Files */,
+			);
+			path = "Simplistic WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		89CEEF4D1B3E3AAE00063FA6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				89CEEF4E1B3E3AAE00063FA6 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		89CEEF741B3E3CA500063FA6 /* Simplistic Sharing Extension */ = {
+			isa = PBXGroup;
+			children = (
+				895A1B0D1B79B60000070CF1 /* Simplistic Sharing Extension.entitlements */,
+				89CEEF751B3E3CA500063FA6 /* ShareViewController.swift */,
+				89CEEF771B3E3CA500063FA6 /* MainInterface.storyboard */,
+				89CEEF7A1B3E3CA500063FA6 /* Info.plist */,
+			);
+			path = "Simplistic Sharing Extension";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		89CEEF101B3E3AAE00063FA6 /* Simplistic */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 89CEEF661B3E3AAF00063FA6 /* Build configuration list for PBXNativeTarget "Simplistic" */;
+			buildPhases = (
+				89CEEF0D1B3E3AAE00063FA6 /* Sources */,
+				89CEEF0E1B3E3AAE00063FA6 /* Frameworks */,
+				89CEEF0F1B3E3AAE00063FA6 /* Resources */,
+				89CEEF651B3E3AAF00063FA6 /* Embed Watch Content */,
+				89CEEF811B3E3CA500063FA6 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				89CEEF3C1B3E3AAE00063FA6 /* PBXTargetDependency */,
+				89CEEF7C1B3E3CA500063FA6 /* PBXTargetDependency */,
+			);
+			name = Simplistic;
+			productName = Simplistic;
+			productReference = 89CEEF111B3E3AAE00063FA6 /* Simplistic.app */;
+			productType = "com.apple.product-type.application";
+		};
+		89CEEF241B3E3AAE00063FA6 /* SimplisticTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 89CEEF691B3E3AAF00063FA6 /* Build configuration list for PBXNativeTarget "SimplisticTests" */;
+			buildPhases = (
+				89CEEF211B3E3AAE00063FA6 /* Sources */,
+				89CEEF221B3E3AAE00063FA6 /* Frameworks */,
+				89CEEF231B3E3AAE00063FA6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				89CEEF271B3E3AAE00063FA6 /* PBXTargetDependency */,
+			);
+			name = SimplisticTests;
+			productName = SimplisticTests;
+			productReference = 89CEEF251B3E3AAE00063FA6 /* SimplisticTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		89CEEF2F1B3E3AAE00063FA6 /* SimplisticUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 89CEEF6C1B3E3AAF00063FA6 /* Build configuration list for PBXNativeTarget "SimplisticUITests" */;
+			buildPhases = (
+				89CEEF2C1B3E3AAE00063FA6 /* Sources */,
+				89CEEF2D1B3E3AAE00063FA6 /* Frameworks */,
+				89CEEF2E1B3E3AAE00063FA6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				89CEEF321B3E3AAE00063FA6 /* PBXTargetDependency */,
+			);
+			name = SimplisticUITests;
+			productName = SimplisticUITests;
+			productReference = 89CEEF301B3E3AAE00063FA6 /* SimplisticUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		89CEEF381B3E3AAE00063FA6 /* Simplistic WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 89CEEF621B3E3AAF00063FA6 /* Build configuration list for PBXNativeTarget "Simplistic WatchKit App" */;
+			buildPhases = (
+				89CEEF371B3E3AAE00063FA6 /* Resources */,
+				89CEEF611B3E3AAF00063FA6 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				89CEEF4B1B3E3AAE00063FA6 /* PBXTargetDependency */,
+			);
+			name = "Simplistic WatchKit App";
+			productName = "Simplistic WatchKit App";
+			productReference = 89CEEF391B3E3AAE00063FA6 /* Simplistic.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		89CEEF471B3E3AAE00063FA6 /* Simplistic WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 89CEEF5E1B3E3AAF00063FA6 /* Build configuration list for PBXNativeTarget "Simplistic WatchKit Extension" */;
+			buildPhases = (
+				89CEEF441B3E3AAE00063FA6 /* Sources */,
+				89CEEF451B3E3AAE00063FA6 /* Frameworks */,
+				89CEEF461B3E3AAE00063FA6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Simplistic WatchKit Extension";
+			productName = "Simplistic WatchKit Extension";
+			productReference = 89CEEF481B3E3AAE00063FA6 /* Simplistic WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+		89CEEF721B3E3CA500063FA6 /* Simplistic Sharing Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 89CEEF7E1B3E3CA500063FA6 /* Build configuration list for PBXNativeTarget "Simplistic Sharing Extension" */;
+			buildPhases = (
+				89CEEF6F1B3E3CA500063FA6 /* Sources */,
+				89CEEF701B3E3CA500063FA6 /* Frameworks */,
+				89CEEF711B3E3CA500063FA6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Simplistic Sharing Extension";
+			productName = "Simplistic Sharing Extension";
+			productReference = 89CEEF731B3E3CA500063FA6 /* Simplistic Sharing Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		89CEEF091B3E3AAE00063FA6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Arnaud Thiercelin";
+				TargetAttributes = {
+					89CEEF101B3E3AAE00063FA6 = {
+						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 6NMM9JPECT;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 0;
+							};
+						};
+					};
+					89CEEF241B3E3AAE00063FA6 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 89CEEF101B3E3AAE00063FA6;
+					};
+					89CEEF2F1B3E3AAE00063FA6 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 89CEEF101B3E3AAE00063FA6;
+					};
+					89CEEF381B3E3AAE00063FA6 = {
+						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 6NMM9JPECT;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					89CEEF471B3E3AAE00063FA6 = {
+						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 6NMM9JPECT;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					89CEEF721B3E3CA500063FA6 = {
+						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 6NMM9JPECT;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 89CEEF0C1B3E3AAE00063FA6 /* Build configuration list for PBXProject "Simplistic" */;
+			compatibilityVersion = "Xcode 6.3";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 89CEEF081B3E3AAE00063FA6;
+			productRefGroup = 89CEEF121B3E3AAE00063FA6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				89CEEF101B3E3AAE00063FA6 /* Simplistic */,
+				89CEEF241B3E3AAE00063FA6 /* SimplisticTests */,
+				89CEEF2F1B3E3AAE00063FA6 /* SimplisticUITests */,
+				89CEEF381B3E3AAE00063FA6 /* Simplistic WatchKit App */,
+				89CEEF471B3E3AAE00063FA6 /* Simplistic WatchKit Extension */,
+				89CEEF721B3E3CA500063FA6 /* Simplistic Sharing Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		89CEEF0F1B3E3AAE00063FA6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89CEEF1F1B3E3AAE00063FA6 /* LaunchScreen.storyboard in Resources */,
+				89CEEF1C1B3E3AAE00063FA6 /* Assets.xcassets in Resources */,
+				89CEEF1A1B3E3AAE00063FA6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89CEEF231B3E3AAE00063FA6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89CEEF2E1B3E3AAE00063FA6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89CEEF371B3E3AAE00063FA6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89CEEF421B3E3AAE00063FA6 /* Assets.xcassets in Resources */,
+				89CEEF401B3E3AAE00063FA6 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89CEEF461B3E3AAE00063FA6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89CEEF5A1B3E3AAF00063FA6 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89CEEF711B3E3CA500063FA6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89CEEF791B3E3CA500063FA6 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		89CEEF0D1B3E3AAE00063FA6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89CEEF171B3E3AAE00063FA6 /* MainTableViewController.swift in Sources */,
+				89CEEF851B3E3D5F00063FA6 /* MainTableViewCell.swift in Sources */,
+				89CEEF151B3E3AAE00063FA6 /* AppDelegate.swift in Sources */,
+				89E0A0F21B92C21A0078AD71 /* MainTableView.swift in Sources */,
+				899106BB1B702E2600D861B1 /* MainTableViewController+CloudKit.swift in Sources */,
+				895A1B0F1B7A94D000070CF1 /* MainTableViewController+WCSessionDelegate.swift in Sources */,
+				899106B21B694E4000D861B1 /* SimplisticModel.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89CEEF211B3E3AAE00063FA6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89CEEF2A1B3E3AAE00063FA6 /* SimplisticTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89CEEF2C1B3E3AAE00063FA6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89CEEF351B3E3AAE00063FA6 /* SimplisticUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89CEEF441B3E3AAE00063FA6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89CEEF541B3E3AAE00063FA6 /* NotificationController.swift in Sources */,
+				8927491A1B793860004F2EAD /* ItemsRowController.swift in Sources */,
+				89CEEF521B3E3AAE00063FA6 /* ExtensionDelegate.swift in Sources */,
+				89CEEF581B3E3AAF00063FA6 /* ComplicationController.swift in Sources */,
+				89CEEF501B3E3AAE00063FA6 /* InterfaceController.swift in Sources */,
+				89CEEF561B3E3AAF00063FA6 /* GlanceController.swift in Sources */,
+				895A1B111B7A9BCD00070CF1 /* InterfaceController+WCSessionDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89CEEF6F1B3E3CA500063FA6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89CEEF761B3E3CA500063FA6 /* ShareViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		89CEEF271B3E3AAE00063FA6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 89CEEF101B3E3AAE00063FA6 /* Simplistic */;
+			targetProxy = 89CEEF261B3E3AAE00063FA6 /* PBXContainerItemProxy */;
+		};
+		89CEEF321B3E3AAE00063FA6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 89CEEF101B3E3AAE00063FA6 /* Simplistic */;
+			targetProxy = 89CEEF311B3E3AAE00063FA6 /* PBXContainerItemProxy */;
+		};
+		89CEEF3C1B3E3AAE00063FA6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 89CEEF381B3E3AAE00063FA6 /* Simplistic WatchKit App */;
+			targetProxy = 89CEEF3B1B3E3AAE00063FA6 /* PBXContainerItemProxy */;
+		};
+		89CEEF4B1B3E3AAE00063FA6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 89CEEF471B3E3AAE00063FA6 /* Simplistic WatchKit Extension */;
+			targetProxy = 89CEEF4A1B3E3AAE00063FA6 /* PBXContainerItemProxy */;
+		};
+		89CEEF7C1B3E3CA500063FA6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 89CEEF721B3E3CA500063FA6 /* Simplistic Sharing Extension */;
+			targetProxy = 89CEEF7B1B3E3CA500063FA6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		89CEEF181B3E3AAE00063FA6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				89CEEF191B3E3AAE00063FA6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		89CEEF1D1B3E3AAE00063FA6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				89CEEF1E1B3E3AAE00063FA6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		89CEEF3E1B3E3AAE00063FA6 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				89CEEF3F1B3E3AAE00063FA6 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+		89CEEF771B3E3CA500063FA6 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				89CEEF781B3E3CA500063FA6 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		89CEEF5C1B3E3AAF00063FA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		89CEEF5D1B3E3AAF00063FA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		89CEEF5F1B3E3AAF00063FA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "Simplistic WatchKit Extension/Simplistic WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "Simplistic WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.arnaudthiercelin.simplistic-ios.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		89CEEF601B3E3AAF00063FA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "Simplistic WatchKit Extension/Simplistic WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "Simplistic WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.arnaudthiercelin.simplistic-ios.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		89CEEF631B3E3AAF00063FA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Simplistic WatchKit App/Simplistic WatchKit App.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = Simplistic_WatchKit_Extension;
+				INFOPLIST_FILE = "Simplistic WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.arnaudthiercelin.simplistic-ios.watchkitapp";
+				PRODUCT_NAME = Simplistic;
+				PROVISIONING_PROFILE = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		89CEEF641B3E3AAF00063FA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Simplistic WatchKit App/Simplistic WatchKit App.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = Simplistic_WatchKit_Extension;
+				INFOPLIST_FILE = "Simplistic WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.arnaudthiercelin.simplistic-ios.watchkitapp";
+				PRODUCT_NAME = Simplistic;
+				PROVISIONING_PROFILE = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		89CEEF671B3E3AAF00063FA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Simplistic/Simplistic.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = Simplistic/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.arnaudthiercelin.simplistic-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		89CEEF681B3E3AAF00063FA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Simplistic/Simplistic.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = Simplistic/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.arnaudthiercelin.simplistic-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+		89CEEF6A1B3E3AAF00063FA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SimplisticTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.arnaudthiercelin.SimplisticTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Simplistic.app/Simplistic";
+			};
+			name = Debug;
+		};
+		89CEEF6B1B3E3AAF00063FA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SimplisticTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.arnaudthiercelin.SimplisticTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Simplistic.app/Simplistic";
+			};
+			name = Release;
+		};
+		89CEEF6D1B3E3AAF00063FA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SimplisticUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.arnaudthiercelin.SimplisticUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Simplistic;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		89CEEF6E1B3E3AAF00063FA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SimplisticUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.arnaudthiercelin.SimplisticUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Simplistic;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+		89CEEF7F1B3E3CA500063FA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Simplistic Sharing Extension/Simplistic Sharing Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "Simplistic Sharing Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.arnaudthiercelin.simplistic-ios.Simplistic-Sharing-Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		89CEEF801B3E3CA500063FA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Simplistic Sharing Extension/Simplistic Sharing Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "Simplistic Sharing Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.arnaudthiercelin.simplistic-ios.Simplistic-Sharing-Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		89CEEF0C1B3E3AAE00063FA6 /* Build configuration list for PBXProject "Simplistic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89CEEF5C1B3E3AAF00063FA6 /* Debug */,
+				89CEEF5D1B3E3AAF00063FA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		89CEEF5E1B3E3AAF00063FA6 /* Build configuration list for PBXNativeTarget "Simplistic WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89CEEF5F1B3E3AAF00063FA6 /* Debug */,
+				89CEEF601B3E3AAF00063FA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		89CEEF621B3E3AAF00063FA6 /* Build configuration list for PBXNativeTarget "Simplistic WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89CEEF631B3E3AAF00063FA6 /* Debug */,
+				89CEEF641B3E3AAF00063FA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		89CEEF661B3E3AAF00063FA6 /* Build configuration list for PBXNativeTarget "Simplistic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89CEEF671B3E3AAF00063FA6 /* Debug */,
+				89CEEF681B3E3AAF00063FA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		89CEEF691B3E3AAF00063FA6 /* Build configuration list for PBXNativeTarget "SimplisticTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89CEEF6A1B3E3AAF00063FA6 /* Debug */,
+				89CEEF6B1B3E3AAF00063FA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		89CEEF6C1B3E3AAF00063FA6 /* Build configuration list for PBXNativeTarget "SimplisticUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89CEEF6D1B3E3AAF00063FA6 /* Debug */,
+				89CEEF6E1B3E3AAF00063FA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		89CEEF7E1B3E3CA500063FA6 /* Build configuration list for PBXNativeTarget "Simplistic Sharing Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89CEEF7F1B3E3CA500063FA6 /* Debug */,
+				89CEEF801B3E3CA500063FA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		899106B01B694E4000D861B1 /* SimplisticModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				899106B11B694E4000D861B1 /* SimplisticModel.xcdatamodel */,
+			);
+			currentVersion = 899106B11B694E4000D861B1 /* SimplisticModel.xcdatamodel */;
+			path = SimplisticModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 89CEEF091B3E3AAE00063FA6 /* Project object */;
+}
