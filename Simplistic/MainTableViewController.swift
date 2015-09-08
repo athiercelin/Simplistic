@@ -13,11 +13,11 @@ import iAd
 
 class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFetchedResultsControllerDelegate, ADBannerViewDelegate {
 	
-	let cellUnDoneBackGroundColor = UIColor(red: 0.658102, green: 0.926204, blue: 0.673501, alpha: 1)
-	let cellDoneBackGroundColor = UIColor(red: 0.926204, green: 0.658102, blue: 0.673501, alpha: 1)
+	var cellUnDoneBackGroundColor = UIColor(red: 0.658102, green: 0.926204, blue: 0.673501, alpha: 1)
+	var cellDoneBackGroundColor = UIColor(red: 0.926204, green: 0.658102, blue: 0.673501, alpha: 1)
 	
-	let cellUnDoneTextColor = UIColor(red: 0.00871759, green: 0.48909, blue: 0.000542229, alpha: 1)
-	let cellDoneTextcolor = UIColor(red: 0.48909, green: 0.00871759, blue: 0.000542229, alpha: 1)
+	var cellUnDoneTextColor = UIColor(red: 0.00871759, green: 0.48909, blue: 0.000542229, alpha: 1)
+	var cellDoneTextcolor = UIColor(red: 0.48909, green: 0.00871759, blue: 0.000542229, alpha: 1)
 	
 	var currentlyEditedCell: MainTableViewCell? = nil
 	
@@ -38,6 +38,24 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFet
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
+		let theme = 1
+		
+		switch theme {
+		case 1:
+			self.cellUnDoneBackGroundColor = UIColor(red: 201/255, green: 239/255, blue: 255/255, alpha: 1)
+			self.cellDoneBackGroundColor = UIColor(red: 210/255, green: 210/255, blue: 210/255, alpha: 1)
+			
+			self.cellUnDoneTextColor = UIColor(red: 43/255, green: 115/255, blue: 252/255, alpha: 1)
+			self.cellDoneTextcolor = UIColor(red: 100/255, green: 100/255, blue: 100/255, alpha: 1)
+		default:
+			self.cellUnDoneBackGroundColor = UIColor(red: 0.658102, green: 0.926204, blue: 0.673501, alpha: 1)
+			self.cellDoneBackGroundColor = UIColor(red: 0.926204, green: 0.658102, blue: 0.673501, alpha: 1)
+			
+			self.cellUnDoneTextColor = UIColor(red: 0.00871759, green: 0.48909, blue: 0.000542229, alpha: 1)
+			self.cellDoneTextcolor = UIColor(red: 0.48909, green: 0.00871759, blue: 0.000542229, alpha: 1)
+		}
+		
 		
 		// Uncomment the following line to preserve selection between presentations
 		// self.clearsSelectionOnViewWillAppear = false
@@ -510,7 +528,7 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFet
 	}
 	
 	func controllerDidChangeContent(controller: NSFetchedResultsController) {
-		self.tableView.endUpdates()
+//		self.tableView.endUpdates()
 	}
 	
 	func controller(controller: NSFetchedResultsController, didChangeSection sectionInfo: NSFetchedResultsSectionInfo, atIndex sectionIndex: Int, forChangeType type: NSFetchedResultsChangeType) {
@@ -534,10 +552,19 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFet
 		case .Delete:
 			tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: UITableViewRowAnimation.Fade)
 			self.updateHelperViewVisibility()
+			self.tableView.endUpdates()
 		case .Update:
-			self.configureCell(self.tableView.cellForRowAtIndexPath(indexPath!)! as! MainTableViewCell, atIndexPath: indexPath!)
+			if indexPath != nil {
+				let cell = self.tableView.cellForRowAtIndexPath(indexPath!) as? MainTableViewCell
+				
+				if cell != nil {
+					self.configureCell(cell!, atIndexPath: indexPath!)
+				}
+			}
+			self.tableView.endUpdates()
 		case .Move:
 			tableView.moveRowAtIndexPath(indexPath!, toIndexPath: newIndexPath!)
+			self.tableView.endUpdates()
 		}
 	}
 
@@ -566,7 +593,9 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFet
 	
 	func bannerViewDidLoadAd(banner: ADBannerView!) {
 		if self.currentlyEditedCell != nil {
-			
+			// This crashes sometimes.
+			// we try again in 5s.
+//			NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: "bannerViewDidLoadAd:", userInfo: nil, repeats: false)
 		} else {
 			self.shouldShowAdBanner = false;
 			self.tableView.reloadData()
@@ -576,7 +605,8 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFet
 
 	func bannerView(banner: ADBannerView!, didFailToReceiveAdWithError error: NSError!) {
 		if self.currentlyEditedCell != nil {
-			
+			// This need to be threadsafe
+			//			NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: "bannerView:didFailToReceiveAdWithError:", userInfo: nil, repeats: false)
 		} else {
 			self.shouldShowAdBanner = false;
 			self.tableView.reloadData()

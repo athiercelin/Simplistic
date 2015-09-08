@@ -12,9 +12,13 @@ import WatchConnectivity
 
 class InterfaceController: WKInterfaceController {
 
+	let cellUnDoneTextColor = UIColor(red: 201/255, green: 239/255, blue: 255/255, alpha: 1)
+	let cellDoneTextcolor = UIColor(red: 100/255, green: 100/255, blue: 100/255, alpha: 1)
+	
 	@IBOutlet var mainTable: WKInterfaceTable!
 	@IBOutlet var noItemsLabel: WKInterfaceLabel!
 	@IBOutlet var noDataLinkLabel: WKInterfaceLabel!
+	@IBOutlet var reachingLabel: WKInterfaceLabel!
 	
 	var session: WCSession? = nil
 	
@@ -26,24 +30,27 @@ class InterfaceController: WKInterfaceController {
     }
 
     override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
+	        // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+		self.reachingLabel.setHidden(false)
+		self.mainTable.setHidden(true)
+		self.noDataLinkLabel.setHidden(true)
+		self.noItemsLabel.setHidden(true)
 		
 		if WCSession.isSupported() {
 			self.session = WCSession.defaultSession()
 			self.session!.delegate = self
 			self.session!.activateSession()
 
-			self.mainTable.setHidden(false)
 
 			if self.session!.reachable {
 				self.noItemsLabel.setHidden(true)
 				
 				self.getFreshItemsList()
-				self.noDataLinkLabel.setHidden(true)
 			} else {
 				self.noItemsLabel.setHidden(true)
 				self.noDataLinkLabel.setHidden(false)
+				self.reachingLabel.setHidden(true)
 			}
 			
 		} else {
@@ -51,6 +58,7 @@ class InterfaceController: WKInterfaceController {
 			self.mainTable.setHidden(true)
 			self.noItemsLabel.setHidden(true)
 			self.noDataLinkLabel.setHidden(false)
+			self.reachingLabel.setHidden(true)
 		}
     }
 
@@ -71,7 +79,7 @@ class InterfaceController: WKInterfaceController {
 	func getFreshItemsList () {
 
 		NSLog("Getting Fresh Items List")
-		if self.session!.reachable {
+//		if self.session!.reachable {
 			NSLog("Session is Reachable, sending GET_LIST")
 			self.session!.sendMessage(["command":"GET_LIST"],
 				replyHandler: { (message: [String : AnyObject]) -> Void in
@@ -99,25 +107,34 @@ class InterfaceController: WKInterfaceController {
 						let dictionary = arrayResults?.objectAtIndex(index)
 						let rowController = self.mainTable.rowControllerAtIndex(index) as! ItemsRowController
 						let done = dictionary?.objectForKey("done") as! Bool
+						let label = dictionary?.objectForKey("label") as? String
 						
 						rowController.doneStatus = done
-						rowController.labelString = dictionary?.objectForKey("label") as! String
-						rowController.label.setText(dictionary?.objectForKey("label") as? String)
+						rowController.labelString = label!
+						let attributedText = NSMutableAttributedString(string: label!)
+
 						if done == false {
-							rowController.label.setTextColor(UIColor.greenColor())
+							rowController.label.setAttributedText(attributedText)
+							rowController.label.setTextColor(self.cellUnDoneTextColor)
 						} else {
-							rowController.label.setTextColor(UIColor.redColor())
+							attributedText.addAttribute(NSStrikethroughStyleAttributeName, value: 2, range: NSMakeRange(0, label!.characters.count))
+							
+							rowController.label.setAttributedText(attributedText)
+							rowController.label.setTextColor(self.cellDoneTextcolor)
 						}
 						
 						
 					}
 					
-					
+					self.mainTable.setHidden(false)
+					self.reachingLabel.setHidden(true)
+					self.noDataLinkLabel.setHidden(true)
+
 				},
 				errorHandler: { (error: NSError) -> Void in
 					NSLog("Error in GetList %@", error)
 			})
-		}
+//		}
 	}
 	
 	func setDoneStatus(doneStatus: Bool, forItemWithId itemId: Int, andLabel label: String) {
@@ -132,10 +149,16 @@ class InterfaceController: WKInterfaceController {
 					let rowController = self.mainTable.rowControllerAtIndex(itemId) as! ItemsRowController
 					
 					rowController.doneStatus = doneStatus
+					let attributedText = NSMutableAttributedString(string: rowController.labelString)
+					
 					if doneStatus == false {
-						rowController.label.setTextColor(UIColor.greenColor())
+						rowController.label.setAttributedText(attributedText)
+						rowController.label.setTextColor(self.cellUnDoneTextColor)
 					} else {
-						rowController.label.setTextColor(UIColor.redColor())
+						attributedText.addAttribute(NSStrikethroughStyleAttributeName, value: 2, range: NSMakeRange(0, rowController.labelString.characters.count))
+						
+						rowController.label.setAttributedText(attributedText)
+						rowController.label.setTextColor(self.cellDoneTextcolor)
 					}
 			},
 				errorHandler: { (error:NSError) -> Void in
