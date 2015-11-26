@@ -12,6 +12,25 @@ import WatchConnectivity
 
 extension InterfaceController: WCSessionDelegate {
 	
+	func sessionWatchStateDidChange(session: WCSession) {
+		
+	}
+	
+	func sessionReachabilityDidChange(session: WCSession) {
+		
+	}
+	
+	func session(session: WCSession, didReceiveApplicationContext applicationContext: [String : AnyObject]) {
+//		self.session!.sendMessage(["command":"GET_LIST"],
+//			replyHandler: { (message: [String : AnyObject]) -> Void in
+		
+		self.useApplicationContext(applicationContext)
+//			},
+//			errorHandler: { (error: NSError) -> Void in
+//				NSLog("Error in GetList %@", error)
+//		})
+	}
+	
 	func session(session: WCSession, didReceiveMessage message: [String : AnyObject]) {
 		
 	

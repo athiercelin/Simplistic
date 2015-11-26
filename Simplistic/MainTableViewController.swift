@@ -39,6 +39,9 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFet
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+		appDelegate.mainTableViewController = self
+		
 		let theme = 1
 		
 		switch theme {
@@ -170,6 +173,7 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFet
 	override func viewDidAppear(animated: Bool) {
 		super.viewDidAppear(animated)
 		self.updateHelperViewVisibility()
+		self.setApplicationContext()
 	}
 	
 	override func didReceiveMemoryWarning() {
@@ -232,7 +236,6 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFet
 	}
 	
 	func removeDoneItems() {
-		
 		do {
 			try self.fetchedResultsController.performFetch()
 			for managedObject in self.fetchedResultsController.fetchedObjects! {
@@ -249,7 +252,7 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFet
 				}
 			}
 			self.reorganizePositionIndex()
-			
+			self.setApplicationContext()
 		} catch {
 			// Error handling
 		}
@@ -260,7 +263,6 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFet
 			try self.fetchedResultsController.performFetch()
 			var index = 0;
 			for managedObject in self.fetchedResultsController.fetchedObjects! {
-
 				managedObject.setValue(index++, forKey: "position")
 			}
 			do {
@@ -390,6 +392,7 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFet
 			
 			do {
 				try self.managedObjectContext.save()
+				self.setApplicationContext()
 			} catch {
 				
 			}			
@@ -484,6 +487,7 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFet
 		
 		do {
 			try self.managedObjectContext.save()
+			self.setApplicationContext()
 		} catch {
 			// error handling
 		}
@@ -597,7 +601,7 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFet
 			// we try again in 5s.
 //			NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: "bannerViewDidLoadAd:", userInfo: nil, repeats: false)
 		} else {
-			self.shouldShowAdBanner = false;
+			self.shouldShowAdBanner = true;
 			self.tableView.reloadData()
 		}
 		
