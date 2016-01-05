@@ -14,5 +14,5 @@ class ItemsRowController: NSObject {
 	@IBOutlet var label: WKInterfaceLabel!
 	var labelString: String = ""
 	var doneStatus: Bool = false
-	
+		
 }

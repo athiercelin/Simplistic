@@ -15,7 +15,7 @@
                                 <tableRow identifier="ItemsRow" id="XUc-6V-XUU" userLabel="ItemRow" customClass="ItemsRowController" customModule="Simplistic">
                                     <group key="rootItem" width="1" alignment="left" id="8sY-tW-mMa">
                                         <items>
-                                            <label height="1" alignment="center" text="Label" textAlignment="left" id="4r2-18-64w"/>
+                                            <label height="1" alignment="center" hidden="YES" text="Label" textAlignment="left" id="4r2-18-64w"/>
                                         </items>
                                     </group>
                                     <connections>

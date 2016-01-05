@@ -21,10 +21,48 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFet
 	
 	var currentlyEditedCell: MainTableViewCell? = nil
 	
-	var managedObjectContext: NSManagedObjectContext! = nil
-	var managedObjectModel: NSManagedObjectModel! = nil;
-	var persistentStoreCoordinator: NSPersistentStoreCoordinator! = nil;
-	var fetchedResultsController: NSFetchedResultsController! = nil;
+	var _managedObjectContext: NSManagedObjectContext! = nil
+	var managedObjectContext: NSManagedObjectContext {
+		get {
+			var token: dispatch_once_t = 0
+			if _managedObjectContext == nil {
+				dispatch_once(&token, { [unowned self] () -> Void in
+					self._managedObjectContext = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
+					self._managedObjectContext.persistentStoreCoordinator = self.persistentStoreCoordinator
+					
+				})
+			}
+			return _managedObjectContext
+		}
+	}
+	var _managedObjectModel: NSManagedObjectModel! = nil
+	var managedObjectModel: NSManagedObjectModel {
+		get {
+			var token: dispatch_once_t = 0
+			if _managedObjectModel == nil {
+				dispatch_once(&token, { [unowned self] () -> Void in
+					let modelURL = NSBundle.mainBundle().URLForResource("SimplisticModel", withExtension: "momd")
+					self._managedObjectModel = NSManagedObjectModel(contentsOfURL: modelURL!)
+				})
+			}
+			return _managedObjectModel
+		}
+	}
+	
+	var _persistentStoreCoordinator: NSPersistentStoreCoordinator! = nil
+	var persistentStoreCoordinator: NSPersistentStoreCoordinator {
+		get {
+			var token: dispatch_once_t = 0
+			if _persistentStoreCoordinator == nil {
+				dispatch_once(&token, { [unowned self] () -> Void in
+				self._persistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
+				})
+			}
+			return _persistentStoreCoordinator
+		}
+	}
+	
+	var fetchedResultsController: NSFetchedResultsController! = nil
 	
 	var session: WCSession? = nil
 	
@@ -87,10 +125,6 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFet
 		//
 		// Core Data
 		//
-		let modelURL = NSBundle.mainBundle().URLForResource("SimplisticModel", withExtension: "momd")
-		self.managedObjectModel = NSManagedObjectModel(contentsOfURL: modelURL!)
-		
-		self.persistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
 		let applicationDocumentDirectory = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).last
 		let storeURL = applicationDocumentDirectory?.URLByAppendingPathComponent("SimplisticModel.sqllite")
 		
@@ -100,9 +134,6 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFet
 			// error handling
 			NSLog("CORE DATA ERROR")
 		}
-		
-		self.managedObjectContext = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
-		self.managedObjectContext.persistentStoreCoordinator = self.persistentStoreCoordinator
 		
 		let fetchRequest = NSFetchRequest()
 		let entity = NSEntityDescription.entityForName("Items", inManagedObjectContext: self.managedObjectContext)
@@ -508,7 +539,6 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFet
 	//MARK: - Core Data + delegates
 	
 	func getItemFromCoreData(withPosition position: Int) throws -> NSManagedObject!  {
-		
 		let fetchRequest = NSFetchRequest()
 		let predicateTemplate = NSPredicate(format: "position == %d", position)
 		

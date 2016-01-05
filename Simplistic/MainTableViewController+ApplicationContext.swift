@@ -14,6 +14,7 @@ extension MainTableViewController {
 	
 	func setApplicationContext() {
 		guard session != nil else {
+			NSLog("Error No Session with watch")
 			return
 		}
 		
@@ -39,44 +40,52 @@ extension MainTableViewController {
 	}
 	
 	func useApplicationContext(applicationContext: [String : AnyObject]) {
-		// On the phone side, the only thing we monitor is the done status.
-		let result = applicationContext["result"] as! [NSDictionary]
-		
-		var itemPosition = 0
-		for item: NSDictionary in result {
-			let itemLabel = item["label"] as! String
-			let newDoneStatus = item["done"] as! Bool
-			do {
-				let item = try self.getItemFromCoreData(withPosition:itemPosition)
-				
-				if item != nil {
-					let cell = self.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: itemPosition, inSection: 0)) as! MainTableViewCell
+		dispatch_async(dispatch_get_main_queue()) { () -> Void in
+			// On the phone side, the only thing we monitor is the done status.
+			let result = applicationContext["result"] as! [NSDictionary]
+			
+			var itemPosition = 0
+			for item: NSDictionary in result {
+				let itemLabel = item["label"] as! String
+				let newDoneStatus = item["done"] as! Bool
+				do {
+					let item = try self.getItemFromCoreData(withPosition:itemPosition)
 					
-					if (item.valueForKey("label") as! String == itemLabel) {
-						item.setValue(newDoneStatus, forKey: "done")
-						item.setValue(NSDate(), forKey: "done_date")
+					if item != nil {
+						let cell = self.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: itemPosition, inSection: 0)) as? MainTableViewCell
 						
-						do {
-							try self.managedObjectContext.save()
-						} catch {
-							
+						guard cell != nil else {
+							NSLog("Found a nil cell at item position %d", itemPosition)
+							continue
 						}
-						
-						if newDoneStatus == true {
-							cell.backgroundColor = self.cellDoneBackGroundColor
-							cell.itemLabel.textColor = self.cellDoneTextcolor
-							cell.itemField.textColor = self.cellDoneTextcolor
-						} else {
-							cell.backgroundColor = self.cellUnDoneBackGroundColor
-							cell.itemLabel.textColor = self.cellUnDoneTextColor
-							cell.itemField.textColor = self.cellUnDoneTextColor
+						if (item.valueForKey("label") as! String == itemLabel) {
+							item.setValue(newDoneStatus, forKey: "done")
+							item.setValue(NSDate(), forKey: "done_date")
+							
+							do {
+								try self.managedObjectContext.save()
+							} catch {
+								
+							}
+							
+							if newDoneStatus == true {
+								cell!.backgroundColor = self.cellDoneBackGroundColor
+								cell!.itemLabel.textColor = self.cellDoneTextcolor
+								cell!.itemField.textColor = self.cellDoneTextcolor
+							} else {
+								cell!.backgroundColor = self.cellUnDoneBackGroundColor
+								cell!.itemLabel.textColor = self.cellUnDoneTextColor
+								cell!.itemField.textColor = self.cellUnDoneTextColor
+							}
 						}
 					}
+				} catch {
+					// Error handling
 				}
-			} catch {
-				// Error handling
+				itemPosition++
 			}
-			itemPosition++
+			
 		}
+
 	}
 }

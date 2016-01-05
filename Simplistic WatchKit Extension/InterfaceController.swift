@@ -67,7 +67,7 @@ class InterfaceController: WKInterfaceController {
 			rowController.label.setAttributedText(attributedText)
 			rowController.label.setTextColor(self.cellUnDoneTextColor)
 		} else {
-			attributedText.addAttribute(NSStrikethroughStyleAttributeName, value: 2, range: NSMakeRange(0, rowController.labelString.characters.count))
+			attributedText.addAttribute(NSStrikethroughStyleAttributeName, value: 2, range: NSMakeRange(0, rowController.labelString.characters.count-1))
 			
 			rowController.label.setAttributedText(attributedText)
 			rowController.label.setTextColor(self.cellDoneTextcolor)

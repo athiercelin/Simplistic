@@ -13,7 +13,7 @@ import WatchConnectivity
 extension InterfaceController {
 	
 	func setApplicationContext() {
-
+		NSLog("Setting the Application Context")
 		var itemId = 0
 		var newArray = [[String:AnyObject]]()
 		while let rowController = self.mainTable.rowControllerAtIndex(itemId++) {
@@ -33,34 +33,47 @@ extension InterfaceController {
 	func useApplicationContext(applicationContext: [String : AnyObject]) {
 		let arrayResults = applicationContext["result"]
 		
+		guard arrayResults != nil else {
+			return
+		}
+		
 		NSLog("data received: %@", arrayResults as! NSArray)
 		
-		let numberOfItems = arrayResults!.count
 		
-		self.mainTable.setNumberOfRows(numberOfItems, withRowType: "ItemsRow")
-		
-		let numberOfRows = self.mainTable.numberOfRows
-		
-		for var index = 0; index < numberOfRows; index++ {
-			let dictionary = arrayResults?.objectAtIndex(index)
-			let rowController = self.mainTable.rowControllerAtIndex(index) as! ItemsRowController
-			let done = dictionary?.objectForKey("done") as! Bool
-			let label = dictionary?.objectForKey("label") as? String
+		dispatch_async(dispatch_get_main_queue()) { () -> Void in
 			
-			rowController.doneStatus = done
-			rowController.labelString = label!
-			let attributedText = NSMutableAttributedString(string: label!)
+			let numberOfItems = arrayResults!.count
 			
-			if done == false {
-				rowController.label.setAttributedText(attributedText)
-				rowController.label.setTextColor(self.cellUnDoneTextColor)
-			} else {
-				attributedText.addAttribute(NSStrikethroughStyleAttributeName, value: 2, range: NSMakeRange(0, label!.characters.count))
+			self.mainTable.setNumberOfRows(numberOfItems, withRowType: "ItemsRow")
+			
+			for var index = 0; index < self.mainTable.numberOfRows; index++ {
+				let dictionary = arrayResults?.objectAtIndex(index)
+				let rowController = self.mainTable.rowControllerAtIndex(index) as! ItemsRowController
+				let done = dictionary?.objectForKey("done") as! Bool
+				let label = dictionary?.objectForKey("label") as? String
 				
-				rowController.label.setAttributedText(attributedText)
-				rowController.label.setTextColor(self.cellDoneTextcolor)
+				let doneChanged = done != rowController.doneStatus
+				let labelChanged = label! != rowController.labelString
+				
+				if doneChanged || labelChanged {
+					rowController.doneStatus = done
+					rowController.labelString = label!
+					let attributedText = NSMutableAttributedString(string: label!)
+					
+					if done == false {
+						rowController.label.setAttributedText(attributedText)
+						rowController.label.setTextColor(self.cellUnDoneTextColor)
+					} else {
+						attributedText.addAttribute(NSStrikethroughStyleAttributeName, value: 2, range: NSMakeRange(0, label!.characters.count))
+						
+						rowController.label.setAttributedText(attributedText)
+						rowController.label.setTextColor(self.cellDoneTextcolor)
+					}
+					rowController.label.setHidden(false)
+				}
 			}
 		}
+
 	}
 	
 }
