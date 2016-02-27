@@ -20,26 +20,4 @@ extension MainTableViewController : WCSessionDelegate  {
 	func session(session: WCSession, didReceiveApplicationContext applicationContext: [String : AnyObject]) {
 		self.useApplicationContext(applicationContext)
 	}
-	
-	func session(session: WCSession, didReceiveMessage message: [String : AnyObject]) {
-		
-	}
-	
-	func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
-		
-		if message["command"] as! String == "DELETE_DONE" {
-			self.removeDoneItems()
-			replyHandler(["Exec" : true])
-		}
-		
-	}
-
-	func session(session: WCSession, didReceiveMessageData messageData: NSData) {
-		
-	}
-	
-	func session(session: WCSession, didReceiveMessageData messageData: NSData, replyHandler: (NSData) -> Void) {
-		
-	}
-	
 }
