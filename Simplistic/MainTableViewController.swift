@@ -12,6 +12,8 @@ import WatchConnectivity
 
 class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFetchedResultsControllerDelegate {
 	
+	let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+	
 	var cellUnDoneBackGroundColor = UIColor(red: 0.658102, green: 0.926204, blue: 0.673501, alpha: 1)
 	var cellDoneBackGroundColor = UIColor(red: 0.926204, green: 0.658102, blue: 0.673501, alpha: 1)
 	
@@ -20,6 +22,7 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFet
 	
 	var currentlyEditedCell: MainTableViewCell? = nil
 	
+	// MARK: CoreData Vars
 	var _managedObjectContext: NSManagedObjectContext! = nil
 	var managedObjectContext: NSManagedObjectContext {
 		get {
@@ -29,7 +32,7 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFet
 					self._managedObjectContext = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
 					self._managedObjectContext.persistentStoreCoordinator = self.persistentStoreCoordinator
 					
-				})
+					})
 			}
 			return _managedObjectContext
 		}
@@ -42,7 +45,7 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFet
 				dispatch_once(&token, { [unowned self] () -> Void in
 					let modelURL = NSBundle.mainBundle().URLForResource("SimplisticModel", withExtension: "momd")
 					self._managedObjectModel = NSManagedObjectModel(contentsOfURL: modelURL!)
-				})
+					})
 			}
 			return _managedObjectModel
 		}
@@ -54,8 +57,8 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFet
 			var token: dispatch_once_t = 0
 			if _persistentStoreCoordinator == nil {
 				dispatch_once(&token, { [unowned self] () -> Void in
-				self._persistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
-				})
+					self._persistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
+					})
 			}
 			return _persistentStoreCoordinator
 		}
@@ -70,9 +73,16 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFet
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-		appDelegate.mainTableViewController = self
+		self.appDelegate.mainTableViewController = self
 		
+		self.setupColors()
+		self.setupRecognizers()
+		self.setupWatchKit()
+		self.setupCoreDate()
+	}
+	
+	func setupColors() {
+		// TODO: This is a temporary theming of the app. Not sure if this will ever be used
 		let theme = 1
 		
 		switch theme {
@@ -89,14 +99,9 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFet
 			self.cellUnDoneTextColor = UIColor(red: 0.00871759, green: 0.48909, blue: 0.000542229, alpha: 1)
 			self.cellDoneTextcolor = UIColor(red: 0.48909, green: 0.00871759, blue: 0.000542229, alpha: 1)
 		}
-		
-		
-		// Uncomment the following line to preserve selection between presentations
-		// self.clearsSelectionOnViewWillAppear = false
-		
-		// Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-		// self.navigationItem.rightBarButtonItem = self.editButtonItem()
-		
+	}
+	
+	func setupRecognizers() {
 		let addRecognizer = UILongPressGestureRecognizer(target: self, action: "addAction:")
 		addRecognizer.minimumPressDuration = 0.25;
 		//		delRecognizer.numberOfTapsRequired = 1;
@@ -105,26 +110,27 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFet
 		
 		let delRecognizer = UILongPressGestureRecognizer(target: self, action: "removeDoneItems:")
 		delRecognizer.minimumPressDuration = 1;
-//		delRecognizer.numberOfTapsRequired = 1;
+		//		delRecognizer.numberOfTapsRequired = 1;
 		delRecognizer.numberOfTouchesRequired = 2;
 		self.tableView.addGestureRecognizer(delRecognizer)
-		
+	}
+	
+	func setupWatchKit() {
 		if WCSession.isSupported() {
 			self.session = WCSession.defaultSession()
 			self.session!.delegate = self
 			self.session!.activateSession()
 		}
-		
-		//
-		// Core Data
-		//
+	}
+	
+	func setupCoreDate() {
 		let applicationDocumentDirectory = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).last
 		let storeURL = applicationDocumentDirectory?.URLByAppendingPathComponent("SimplisticModel.sqllite")
 		
 		do {
 			try self.persistentStoreCoordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: nil)
 		} catch {
-			// error handling
+			//TODO: error handling
 			NSLog("CORE DATA ERROR")
 		}
 		
@@ -141,7 +147,6 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFet
 		
 		self.fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.managedObjectContext, sectionNameKeyPath: nil, cacheName: "MainTableView")
 		self.fetchedResultsController.delegate = self
-		
 	}
 	
 	override func viewWillAppear(animated: Bool) {
@@ -168,7 +173,7 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFet
 					let label = managedObject.valueForKey("label") as! String
 					
 					if doneStatus == true && dateDelta > timeDelay
-					|| label.isEmpty == true
+						|| label.isEmpty == true
 					{
 						self.managedObjectContext.deleteObject(managedObject as! NSManagedObject)
 						didChangeSomething = true;
@@ -180,11 +185,11 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFet
 				do {
 					try self.managedObjectContext.save()
 				} catch {
-					// error handling
+					//TODO: error handling
 				}
 			}
 		} catch {
-			//Error handling
+			//TODO: Error handling
 		}
 	}
 	
@@ -197,18 +202,17 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFet
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
 		// Dispose of any resources that can be recreated.
+		// TODO: This app is super lightweight but still.
 	}
 	
 	// MARK: - Content Creation
 	
 	func addAction(recognizer: UILongPressGestureRecognizer) {
-		//		let numberOfTouches = recognizer.numberOfTouches()
-
 		if recognizer.state != UIGestureRecognizerState.Began {
 			return
 		}
 		
-		// we test if something is currentyl being edited.
+		// we test if something is currently being edited.
 		if self.currentlyEditedCell != nil {
 			// if it is not empty, we dont add another empty item.
 			if self.currentlyEditedCell!.itemField.text!.isEmpty {
@@ -238,17 +242,17 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFet
 		newItem.setValue(NSDate(), forKey: "last_modif_date")
 		newItem.setValue("", forKey: "label")
 		
-		// Push to cloudkit
+		// TODO: Push to cloudkit
 		//	self.addRecordToCloudKit(newItem)
 		
 		do {
 			try self.managedObjectContext.save()
 		} catch {
-			// error handling
+			//TODO: error handling
 		}
 		
 	}
-
+	
 	func removeDoneItems(recognizer: UITapGestureRecognizer) {
 		self.removeDoneItems()
 	}
@@ -265,14 +269,14 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFet
 					do {
 						try self.managedObjectContext.save()
 					} catch {
-						// Error handling
+						//TODO: Error handling
 					}
 				}
 			}
 			self.reorganizePositionIndex()
 			self.setApplicationContext()
 		} catch {
-			// Error handling
+			//TODO: Error handling
 		}
 	}
 	
@@ -286,12 +290,12 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFet
 			do {
 				try self.managedObjectContext.save()
 			} catch {
-				// Error handling
+				//TODO: Error handling
 			}
 			
 			
 		} catch {
-			// Error handling
+			//TODO: Error handling
 		}
 	}
 	
@@ -304,13 +308,48 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFet
 		if itemsCount == 0 {
 			self.view.addSubview(self.helpView)
 			self.helpView.translatesAutoresizingMaskIntoConstraints = false
-			self.view.addConstraint(NSLayoutConstraint(item: self.helpView, attribute: .Leading, relatedBy: .Equal, toItem: self.view, attribute: .Leading, multiplier: 1, constant: 0))
-			self.view.addConstraint(NSLayoutConstraint(item: self.helpView, attribute: .Trailing, relatedBy: .Equal, toItem: self.view, attribute: .Trailing, multiplier: 1, constant: 0))
-			self.view.addConstraint(NSLayoutConstraint(item: self.helpView, attribute: .Top, relatedBy: .Equal, toItem: self.view, attribute: .Top, multiplier: 1, constant: 0))
-			self.view.addConstraint(NSLayoutConstraint(item: self.helpView, attribute: .Bottom, relatedBy: .Equal, toItem: self.view, attribute: .Bottom, multiplier: 1, constant: 0))
-			self.view.addConstraint(NSLayoutConstraint(item: self.helpView, attribute: .CenterX, relatedBy: .Equal, toItem: self.view, attribute: .CenterX, multiplier: 1, constant: 0))
-			self.view.addConstraint(NSLayoutConstraint(item: self.helpView, attribute: .CenterY, relatedBy: .Equal, toItem: self.view, attribute: .CenterY, multiplier: 1, constant: 0))
-			//		self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[helpView]-0-|", options: 0, metrics: nil, views: ["helpView" : self.helpView]))
+			self.view.addConstraint(NSLayoutConstraint(item: self.helpView,
+				attribute: .Leading,
+				relatedBy: .Equal,
+				toItem: self.view,
+				attribute: .Leading,
+				multiplier: 1,
+				constant: 0))
+			self.view.addConstraint(NSLayoutConstraint(item: self.helpView,
+				attribute: .Trailing,
+				relatedBy: .Equal,
+				toItem: self.view,
+				attribute: .Trailing,
+				multiplier: 1,
+				constant: 0))
+			self.view.addConstraint(NSLayoutConstraint(item: self.helpView,
+				attribute: .Top,
+				relatedBy: .Equal,
+				toItem: self.view,
+				attribute: .Top,
+				multiplier: 1,
+				constant: 0))
+			self.view.addConstraint(NSLayoutConstraint(item: self.helpView,
+				attribute: .Bottom,
+				relatedBy: .Equal,
+				toItem: self.view,
+				attribute: .Bottom,
+				multiplier: 1,
+				constant: 0))
+			self.view.addConstraint(NSLayoutConstraint(item: self.helpView,
+				attribute: .CenterX,
+				relatedBy: .Equal,
+				toItem: self.view,
+				attribute: .CenterX,
+				multiplier: 1,
+				constant: 0))
+			self.view.addConstraint(NSLayoutConstraint(item: self.helpView,
+				attribute: .CenterY,
+				relatedBy: .Equal,
+				toItem: self.view,
+				attribute: .CenterY,
+				multiplier: 1,
+				constant: 0))
 		} else if self.helpView.superview != nil {
 			self.helpView.removeFromSuperview()
 		}
@@ -381,24 +420,11 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFet
 		return false
 	}
 	
-	// Override to support editing the table view.
-	//	override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-	//		if editingStyle == .Delete {
-	//			// Delete the row from the data source
-	//			self.items.removeAtIndex(indexPath.row)
-	//			tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-	//		} else if editingStyle == .Insert {
-	//			// Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-	//		}
-	//	}
-	
-//	override func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
 	override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-
 		if self.currentlyEditedCell != nil {
 			self.currentlyEditedCell?.itemField.resignFirstResponder()
 		}
-
+		
 		do {
 			let item = try self.getItemFromCoreData(withPosition: indexPath.row)
 			let cell = self.tableView.cellForRowAtIndexPath(indexPath) as! MainTableViewCell
@@ -412,8 +438,8 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFet
 				try self.managedObjectContext.save()
 				self.setApplicationContext()
 			} catch {
-				
-			}			
+				//TODO: Error handling here
+			}
 			
 			if newDoneStatus == true {
 				cell.backgroundColor = self.cellDoneBackGroundColor
@@ -425,37 +451,10 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFet
 				cell.itemField.textColor = self.cellUnDoneTextColor
 			}
 		} catch {
-			// Error handling
+			//TODO: Error handling
 		}
 		return
 	}
-	
-	
-	/*
-	// Override to support rearranging the table view.
-	override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-	
-	}
-	*/
-	
-	/*
-	// Override to support conditional rearranging of the table view.
-	override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-	// Return NO if you do not want the item to be re-orderable.
-	return true
-	}
-	*/
-	
-	/*
-	// MARK: - Navigation
-	
-	// In a storyboard-based application, you will often want to do a little preparation before navigation
-	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-	// Get the new view controller using segue.destinationViewController.
-	// Pass the selected object to the new view controller.
-	}
-	*/
-	
 	
 	//MARK: TextField Delegate
 	func textFieldDidBeginEditing(textField: UITextField) {
@@ -485,7 +484,7 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFet
 		do {
 			let managedItem = try self.getItemFromCoreData(withPosition: (indexPath?.row)!)
 			
-			// Sometimes we get a nil managed item and I don't know why.
+			// Sometimes we get a nil managed item and I don't know why yet - probabyl related to the position thingy.
 			if managedItem == nil {
 				return
 			}
@@ -500,20 +499,20 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFet
 				cell.itemLabel.hidden = false
 			}
 		} catch {
-			// Error handling here.
+			//TODO:  Error handling here.
 		}
 		
 		do {
 			try self.managedObjectContext.save()
 			self.setApplicationContext()
 		} catch {
-			// error handling
+			//TODO: error handling
 		}
 	}
 	
 	
 	//MARK: - Core Data + delegates
-	
+	// TODO: Need to change that position thingy, it's a bad idea.
 	func getItemFromCoreData(withPosition position: Int) throws -> NSManagedObject!  {
 		let fetchRequest = NSFetchRequest()
 		let predicateTemplate = NSPredicate(format: "position == %d", position)
@@ -527,8 +526,7 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFet
 			
 			return results.first as! NSManagedObject!
 		} catch {
-			
-			// error handling
+			//TODO: error handling
 		}
 		return nil
 	}
@@ -538,7 +536,7 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFet
 	}
 	
 	func controllerDidChangeContent(controller: NSFetchedResultsController) {
-//		self.tableView.endUpdates()
+		//		self.tableView.endUpdates()
 	}
 	
 	func controller(controller: NSFetchedResultsController, didChangeSection sectionInfo: NSFetchedResultsSectionInfo, atIndex sectionIndex: Int, forChangeType type: NSFetchedResultsChangeType) {
@@ -577,9 +575,4 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFet
 			self.tableView.endUpdates()
 		}
 	}
-
 }
-
-
-
-

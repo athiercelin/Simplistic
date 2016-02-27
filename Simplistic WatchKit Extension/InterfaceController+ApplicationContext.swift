@@ -39,7 +39,6 @@ extension InterfaceController {
 		
 		NSLog("data received: %@", arrayResults as! NSArray)
 		
-		
 		dispatch_async(dispatch_get_main_queue()) { () -> Void in
 			
 			let numberOfItems = arrayResults!.count

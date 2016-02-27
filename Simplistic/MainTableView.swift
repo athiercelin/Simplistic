@@ -10,14 +10,6 @@ import UIKit
 
 class MainTableView: UITableView {
 
-    /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        // Drawing code
-    }
-    */
-//
 	override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
 		NSLog("Touches: %d", touches.count)
 		NSLog("All Touches: %d", (event?.allTouches()!.count)!)

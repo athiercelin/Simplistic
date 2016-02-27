@@ -56,7 +56,6 @@ class InterfaceController: WKInterfaceController {
 	
 	func setDoneStatus(doneStatus: Bool, forItemWithId itemId: Int, andLabel label: String) {
 		NSLog("Setting Done on item %@ at position %d", label, itemId)
-
 		
 		let rowController = self.mainTable.rowControllerAtIndex(itemId) as! ItemsRowController
 		

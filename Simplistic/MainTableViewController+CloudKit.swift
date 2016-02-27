@@ -10,6 +10,8 @@ import Foundation
 import CloudKit
 import CoreData
 
+
+// TODO: Finish this.
 extension MainTableViewController {
 	
 	func getDataFromCloudKit () {
@@ -28,8 +30,7 @@ extension MainTableViewController {
 				return
 			}
 			
-			// Pulling data from coredata to compare.
-			
+			// Pulling data from coredata to compare.			
 			do {
 				try self.fetchedResultsController.performFetch()
 			} catch {

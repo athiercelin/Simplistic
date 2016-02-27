@@ -33,7 +33,7 @@ extension MainTableViewController {
 			}
 			try self.session!.updateApplicationContext(["result": resultArray.copy()])
 		} catch {
-			//Error handling
+			// TODO: Error handling
 			NSLog("Error setting the application context \(error)")
 		}
 
@@ -84,8 +84,6 @@ extension MainTableViewController {
 				}
 				itemPosition++
 			}
-			
 		}
-
 	}
 }
