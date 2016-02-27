@@ -337,16 +337,16 @@
 			children = (
 				899106B51B6ADC8B00D861B1 /* Simplistic.entitlements */,
 				89CEEF141B3E3AAE00063FA6 /* AppDelegate.swift */,
+				89CEEF181B3E3AAE00063FA6 /* Main.storyboard */,
 				89CEEF161B3E3AAE00063FA6 /* MainTableViewController.swift */,
 				895A1B0E1B7A94D000070CF1 /* MainTableViewController+WCSessionDelegate.swift */,
 				899106BA1B702E2600D861B1 /* MainTableViewController+CloudKit.swift */,
 				892C3D471C003CCF00804A8B /* MainTableViewController+ApplicationContext.swift */,
 				89E0A0F11B92C21A0078AD71 /* MainTableView.swift */,
-				89CEEF181B3E3AAE00063FA6 /* Main.storyboard */,
+				89CEEF841B3E3D5F00063FA6 /* MainTableViewCell.swift */,
 				89CEEF1B1B3E3AAE00063FA6 /* Assets.xcassets */,
 				89CEEF1D1B3E3AAE00063FA6 /* LaunchScreen.storyboard */,
 				89CEEF201B3E3AAE00063FA6 /* Info.plist */,
-				89CEEF841B3E3D5F00063FA6 /* MainTableViewCell.swift */,
 				899106B01B694E4000D861B1 /* SimplisticModel.xcdatamodeld */,
 			);
 			path = Simplistic;
@@ -426,6 +426,7 @@
 				8939523E1C81E98600D35895 /* Sources */,
 				8939523F1C81E98600D35895 /* Frameworks */,
 				893952401C81E98600D35895 /* Resources */,
+				893952721C81EA1600D35895 /* Additional Warnings */,
 			);
 			buildRules = (
 			);
@@ -769,6 +770,20 @@
 			shellScript = "KEYWORDS=\"TODO:|FIXME:|\\?\\?\\?:|\\!\\!\\!:\"\nfind \"${SRCROOT}\" \\( -name \"*.h\" -or -name \"*.m\" -or -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($KEYWORDS).*\\$\" | perl -p -e \"s/($KEYWORDS)/ warning: \\$1/\"\n";
 		};
 		8939523D1C81E93700D35895 /* Additional Warnings */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Additional Warnings";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "KEYWORDS=\"TODO:|FIXME:|\\?\\?\\?:|\\!\\!\\!:\"\nfind \"${SRCROOT}\" \\( -name \"*.h\" -or -name \"*.m\" -or -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($KEYWORDS).*\\$\" | perl -p -e \"s/($KEYWORDS)/ warning: \\$1/\"";
+		};
+		893952721C81EA1600D35895 /* Additional Warnings */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (

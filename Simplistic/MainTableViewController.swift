@@ -9,9 +9,8 @@
 import UIKit
 import CoreData
 import WatchConnectivity
-import iAd
 
-class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFetchedResultsControllerDelegate, ADBannerViewDelegate {
+class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFetchedResultsControllerDelegate {
 	
 	var cellUnDoneBackGroundColor = UIColor(red: 0.658102, green: 0.926204, blue: 0.673501, alpha: 1)
 	var cellDoneBackGroundColor = UIColor(red: 0.926204, green: 0.658102, blue: 0.673501, alpha: 1)
@@ -67,12 +66,6 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFet
 	var session: WCSession? = nil
 	
 	@IBOutlet var helpView: UIView!
-	
-	
-	var adBannerView: ADBannerView = ADBannerView(adType: ADAdType.Banner)
-	var shouldShowAdBanner: Bool = false
-	var shouldShowBannerAfterEdit: Bool = false // c'est de la merde ca mais faut que javance.
-	var shouldHideBannerAfterEdit: Bool = false
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -148,12 +141,6 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFet
 		
 		self.fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.managedObjectContext, sectionNameKeyPath: nil, cacheName: "MainTableView")
 		self.fetchedResultsController.delegate = self
-	
-		// 
-		// iAd
-		// 
-		
-		self.adBannerView.delegate = self
 		
 	}
 	
@@ -522,17 +509,6 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFet
 		} catch {
 			// error handling
 		}
-
-		if self.shouldShowBannerAfterEdit {
-			self.shouldShowBannerAfterEdit = false
-			self.shouldShowAdBanner = true
-			self.tableView.reloadData()
-		} else if self.shouldHideBannerAfterEdit {
-			self.shouldHideBannerAfterEdit = false
-			self.shouldShowAdBanner = true
-			self.tableView.reloadData()
-		}
-		
 	}
 	
 	
@@ -599,51 +575,6 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFet
 		case .Move:
 			tableView.moveRowAtIndexPath(indexPath!, toIndexPath: newIndexPath!)
 			self.tableView.endUpdates()
-		}
-	}
-
-	//MARK: - iAd Delegate
-
-	//	override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-	override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-
-		if self.shouldShowAdBanner {
-			return self.adBannerView.frame.size.height
-		} else {
-			return 0
-		}
-	}
-	
-//	override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-	override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-		
-		if self.shouldShowAdBanner {
-			return self.adBannerView
-		} else {
-			return nil;
-		}
-	}
-
-	
-	func bannerViewDidLoadAd(banner: ADBannerView!) {
-		if self.currentlyEditedCell != nil {
-			// This crashes sometimes.
-			// we try again in 5s.
-//			NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: "bannerViewDidLoadAd:", userInfo: nil, repeats: false)
-		} else {
-			self.shouldShowAdBanner = true;
-			self.tableView.reloadData()
-		}
-		
-	}
-
-	func bannerView(banner: ADBannerView!, didFailToReceiveAdWithError error: NSError!) {
-		if self.currentlyEditedCell != nil {
-			// This need to be threadsafe
-			//			NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: "bannerView:didFailToReceiveAdWithError:", userInfo: nil, repeats: false)
-		} else {
-			self.shouldShowAdBanner = false;
-			self.tableView.reloadData()
 		}
 	}
 
