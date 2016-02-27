@@ -1,6 +1,6 @@
 # ![Download](https://github.com/athiercelin/Simplistic/blob/master/mdImages/Simplistic_icon_small.png?raw=true) Simplistic
 
-<center>[![Download](https://github.com/athiercelin/Simplistic/blob/master/mdImages/Download_on_the_App_Store_Badge_US.png?raw=true)](https://itunes.apple.com/us/app/simplistic/id1013231982?ls=1&mt=8)</center>
+<center>[![Download](https://github.com/athiercelin/Simplistic/blob/master/mdImages/Download_on_the_App_Store_Badge_US.png?raw=true)](https://itunes.apple.com/us/app/simplistic/id1013231982?ls=1&mt=8 =100)</center>
 
 
 Simplistic is a dirt simple, easy to use checklist app for iPhone, iPod and Apple Watch.
@@ -18,14 +18,14 @@ Watch:
 • Force Touch shows the menu to delete done items right away. (Otherwise, automatically removed after 24hrs)
 
 ## iPhone Screenshots
-![Screenshot](https://github.com/athiercelin/Simplistic/blob/master/mdImages/Screenshots/iphone1.png?raw=true)
-![Screenshot](https://github.com/athiercelin/Simplistic/blob/master/mdImages/Screenshots/iphone2.png?raw=true)
-![Screenshot](https://github.com/athiercelin/Simplistic/blob/master/mdImages/Screenshots/iphone4.png?raw=true)
-![Screenshot](https://github.com/athiercelin/Simplistic/blob/master/mdImages/Screenshots/iphone5.png?raw=true)
+![Screenshot](https://github.com/athiercelin/Simplistic/blob/master/mdImages/Screenshots/iphone1.png?raw=true =200)
+![Screenshot](https://github.com/athiercelin/Simplistic/blob/master/mdImages/Screenshots/iphone2.png?raw=true =200)
+![Screenshot](https://github.com/athiercelin/Simplistic/blob/master/mdImages/Screenshots/iphone4.png?raw=true =200)
+![Screenshot](https://github.com/athiercelin/Simplistic/blob/master/mdImages/Screenshots/iphone5.png?raw=true =200)
 
 ## Apple Watch Screenshots
-![Screenshot](https://github.com/athiercelin/Simplistic/blob/master/mdImages/Screenshots/watch1.png?raw=true)
-![Screenshot](https://github.com/athiercelin/Simplistic/blob/master/mdImages/Screenshots/watch2.png?raw=true)
+![Screenshot](https://github.com/athiercelin/Simplistic/blob/master/mdImages/Screenshots/watch1.png?raw=true =150)
+![Screenshot](https://github.com/athiercelin/Simplistic/blob/master/mdImages/Screenshots/watch2.png?raw=true =150)
 
 ## OS X Screenshots (TBD)
 
