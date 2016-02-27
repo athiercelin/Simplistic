@@ -1,6 +1,6 @@
-# ![Download](https://github.com/athiercelin/Simplistic/blob/master/mdImages/Simplistic_icon.png?raw=true) Simplistic 2.0 (WIP)
+# ![Download](https://github.com/athiercelin/Simplistic/blob/master/mdImages/Simplistic_icon_small.png?raw=true) Simplistic 2.0 (WIP)
 
-<center>[![Download](https://github.com/athiercelin/Simplistic/blob/master/mdImages/Download_on_the_App_Store_Badge_US.svg?raw=true)](https://itunes.apple.com/us/app/simplistic/id1013231982?ls=1&mt=8)</center>
+<center>[![Download](https://github.com/athiercelin/Simplistic/blob/master/mdImages/Download_on_the_App_Store_Badge_US.png?raw=true)](https://itunes.apple.com/us/app/simplistic/id1013231982?ls=1&mt=8)</center>
 
 
 Simplistic is a dirt simple, easy to use checklist app for your iPhone, iPod and Apple Watch!
