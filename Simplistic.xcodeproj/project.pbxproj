@@ -139,6 +139,8 @@
 		893952601C81E98600D35895 /* Simplistic-OSXUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Simplistic-OSXUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		893952641C81E98600D35895 /* Simplistic_OSXUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Simplistic_OSXUITests.swift; sourceTree = "<group>"; };
 		893952661C81E98600D35895 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		893952731C81EB5D00D35895 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
+		893952741C81EB5D00D35895 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		895A1B0D1B79B60000070CF1 /* Simplistic Sharing Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Simplistic Sharing Extension.entitlements"; sourceTree = "<group>"; };
 		895A1B0E1B7A94D000070CF1 /* MainTableViewController+WCSessionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MainTableViewController+WCSessionDelegate.swift"; sourceTree = "<group>"; };
 		895A1B101B7A9BCD00070CF1 /* InterfaceController+WCSessionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InterfaceController+WCSessionDelegate.swift"; sourceTree = "<group>"; };
@@ -309,6 +311,8 @@
 		89CEEF081B3E3AAE00063FA6 = {
 			isa = PBXGroup;
 			children = (
+				893952731C81EB5D00D35895 /* LICENSE.md */,
+				893952741C81EB5D00D35895 /* README.md */,
 				899106B31B697D7A00D861B1 /* CoreData.framework */,
 				893952711C81E99E00D35895 /* iOS */,
 				893952701C81E99300D35895 /* OS X */,
