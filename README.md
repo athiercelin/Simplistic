@@ -1,4 +1,4 @@
-# ![Download](https://github.com/athiercelin/Simplistic/blob/master/mdImages/Simplistic_icon_small.png?raw=true) Simplistic
+# ![Download](https://github.com/athiercelin/Simplistic/blob/master/mdImages/Simplistic_icon.png?raw=true =27x27) Simplistic
 
 <center>[![Download](https://github.com/athiercelin/Simplistic/blob/master/mdImages/Download_on_the_App_Store_Badge_US.png?raw=true)](https://itunes.apple.com/us/app/simplistic/id1013231982?ls=1&mt=8 =100)</center>
 
