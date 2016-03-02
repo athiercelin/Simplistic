@@ -109,7 +109,7 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFet
 		self.tableView.addGestureRecognizer(addRecognizer)
 		
 		let delRecognizer = UILongPressGestureRecognizer(target: self, action: "removeDoneItems:")
-		delRecognizer.minimumPressDuration = 1;
+		delRecognizer.minimumPressDuration = 0.75;
 		//		delRecognizer.numberOfTapsRequired = 1;
 		delRecognizer.numberOfTouchesRequired = 2;
 		self.tableView.addGestureRecognizer(delRecognizer)
