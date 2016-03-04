@@ -2,7 +2,7 @@
 //  Simplistic_OSXTests.swift
 //  Simplistic-OSXTests
 //
-//  Created by Arnaud Thiercelin on 2/27/16.
+//  Created by Arnaud Thiercelin on 3/4/16.
 //  Copyright © 2016 Arnaud Thiercelin. All rights reserved.
 //
 

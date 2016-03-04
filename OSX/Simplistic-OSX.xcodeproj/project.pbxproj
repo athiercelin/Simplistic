@@ -1,0 +1,515 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		893952D91C89AC7F00D35895 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893952D81C89AC7F00D35895 /* AppDelegate.swift */; };
+		893952DB1C89AC7F00D35895 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893952DA1C89AC7F00D35895 /* ViewController.swift */; };
+		893952DE1C89AC7F00D35895 /* Simplistic_OSX.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 893952DC1C89AC7F00D35895 /* Simplistic_OSX.xcdatamodeld */; };
+		893952E01C89AC7F00D35895 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 893952DF1C89AC7F00D35895 /* Assets.xcassets */; };
+		893952E31C89AC7F00D35895 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 893952E11C89AC7F00D35895 /* Main.storyboard */; };
+		893952EE1C89AC7F00D35895 /* Simplistic_OSXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893952ED1C89AC7F00D35895 /* Simplistic_OSXTests.swift */; };
+		893952F91C89AC7F00D35895 /* Simplistic_OSXUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893952F81C89AC7F00D35895 /* Simplistic_OSXUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		893952EA1C89AC7F00D35895 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 893952CD1C89AC7F00D35895 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 893952D41C89AC7F00D35895;
+			remoteInfo = "Simplistic-OSX";
+		};
+		893952F51C89AC7F00D35895 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 893952CD1C89AC7F00D35895 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 893952D41C89AC7F00D35895;
+			remoteInfo = "Simplistic-OSX";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		893952D51C89AC7F00D35895 /* Simplistic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Simplistic.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		893952D81C89AC7F00D35895 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		893952DA1C89AC7F00D35895 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		893952DD1C89AC7F00D35895 /* Simplistic_OSX.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Simplistic_OSX.xcdatamodel; sourceTree = "<group>"; };
+		893952DF1C89AC7F00D35895 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		893952E21C89AC7F00D35895 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		893952E41C89AC7F00D35895 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		893952E91C89AC7F00D35895 /* Simplistic-OSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Simplistic-OSXTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		893952ED1C89AC7F00D35895 /* Simplistic_OSXTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Simplistic_OSXTests.swift; sourceTree = "<group>"; };
+		893952EF1C89AC7F00D35895 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		893952F41C89AC7F00D35895 /* Simplistic-OSXUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Simplistic-OSXUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		893952F81C89AC7F00D35895 /* Simplistic_OSXUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Simplistic_OSXUITests.swift; sourceTree = "<group>"; };
+		893952FA1C89AC7F00D35895 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		893952D21C89AC7F00D35895 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		893952E61C89AC7F00D35895 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		893952F11C89AC7F00D35895 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		893952CC1C89AC7F00D35895 = {
+			isa = PBXGroup;
+			children = (
+				893952D71C89AC7F00D35895 /* Simplistic-OSX */,
+				893952EC1C89AC7F00D35895 /* Simplistic-OSXTests */,
+				893952F71C89AC7F00D35895 /* Simplistic-OSXUITests */,
+				893952D61C89AC7F00D35895 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		893952D61C89AC7F00D35895 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				893952D51C89AC7F00D35895 /* Simplistic.app */,
+				893952E91C89AC7F00D35895 /* Simplistic-OSXTests.xctest */,
+				893952F41C89AC7F00D35895 /* Simplistic-OSXUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		893952D71C89AC7F00D35895 /* Simplistic-OSX */ = {
+			isa = PBXGroup;
+			children = (
+				893952D81C89AC7F00D35895 /* AppDelegate.swift */,
+				893952DA1C89AC7F00D35895 /* ViewController.swift */,
+				893952DF1C89AC7F00D35895 /* Assets.xcassets */,
+				893952E11C89AC7F00D35895 /* Main.storyboard */,
+				893952E41C89AC7F00D35895 /* Info.plist */,
+				893952DC1C89AC7F00D35895 /* Simplistic_OSX.xcdatamodeld */,
+			);
+			path = "Simplistic-OSX";
+			sourceTree = "<group>";
+		};
+		893952EC1C89AC7F00D35895 /* Simplistic-OSXTests */ = {
+			isa = PBXGroup;
+			children = (
+				893952ED1C89AC7F00D35895 /* Simplistic_OSXTests.swift */,
+				893952EF1C89AC7F00D35895 /* Info.plist */,
+			);
+			path = "Simplistic-OSXTests";
+			sourceTree = "<group>";
+		};
+		893952F71C89AC7F00D35895 /* Simplistic-OSXUITests */ = {
+			isa = PBXGroup;
+			children = (
+				893952F81C89AC7F00D35895 /* Simplistic_OSXUITests.swift */,
+				893952FA1C89AC7F00D35895 /* Info.plist */,
+			);
+			path = "Simplistic-OSXUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		893952D41C89AC7F00D35895 /* Simplistic */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 893952FD1C89AC7F00D35895 /* Build configuration list for PBXNativeTarget "Simplistic" */;
+			buildPhases = (
+				893952D11C89AC7F00D35895 /* Sources */,
+				893952D21C89AC7F00D35895 /* Frameworks */,
+				893952D31C89AC7F00D35895 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Simplistic;
+			productName = "Simplistic-OSX";
+			productReference = 893952D51C89AC7F00D35895 /* Simplistic.app */;
+			productType = "com.apple.product-type.application";
+		};
+		893952E81C89AC7F00D35895 /* Simplistic-OSXTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 893953001C89AC7F00D35895 /* Build configuration list for PBXNativeTarget "Simplistic-OSXTests" */;
+			buildPhases = (
+				893952E51C89AC7F00D35895 /* Sources */,
+				893952E61C89AC7F00D35895 /* Frameworks */,
+				893952E71C89AC7F00D35895 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				893952EB1C89AC7F00D35895 /* PBXTargetDependency */,
+			);
+			name = "Simplistic-OSXTests";
+			productName = "Simplistic-OSXTests";
+			productReference = 893952E91C89AC7F00D35895 /* Simplistic-OSXTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		893952F31C89AC7F00D35895 /* Simplistic-OSXUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 893953031C89AC7F00D35895 /* Build configuration list for PBXNativeTarget "Simplistic-OSXUITests" */;
+			buildPhases = (
+				893952F01C89AC7F00D35895 /* Sources */,
+				893952F11C89AC7F00D35895 /* Frameworks */,
+				893952F21C89AC7F00D35895 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				893952F61C89AC7F00D35895 /* PBXTargetDependency */,
+			);
+			name = "Simplistic-OSXUITests";
+			productName = "Simplistic-OSXUITests";
+			productReference = 893952F41C89AC7F00D35895 /* Simplistic-OSXUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		893952CD1C89AC7F00D35895 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Arnaud Thiercelin";
+				TargetAttributes = {
+					893952D41C89AC7F00D35895 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+					893952E81C89AC7F00D35895 = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = 893952D41C89AC7F00D35895;
+					};
+					893952F31C89AC7F00D35895 = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = 893952D41C89AC7F00D35895;
+					};
+				};
+			};
+			buildConfigurationList = 893952D01C89AC7F00D35895 /* Build configuration list for PBXProject "Simplistic-OSX" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 893952CC1C89AC7F00D35895;
+			productRefGroup = 893952D61C89AC7F00D35895 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				893952D41C89AC7F00D35895 /* Simplistic */,
+				893952E81C89AC7F00D35895 /* Simplistic-OSXTests */,
+				893952F31C89AC7F00D35895 /* Simplistic-OSXUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		893952D31C89AC7F00D35895 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				893952E01C89AC7F00D35895 /* Assets.xcassets in Resources */,
+				893952E31C89AC7F00D35895 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		893952E71C89AC7F00D35895 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		893952F21C89AC7F00D35895 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		893952D11C89AC7F00D35895 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				893952DB1C89AC7F00D35895 /* ViewController.swift in Sources */,
+				893952D91C89AC7F00D35895 /* AppDelegate.swift in Sources */,
+				893952DE1C89AC7F00D35895 /* Simplistic_OSX.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		893952E51C89AC7F00D35895 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				893952EE1C89AC7F00D35895 /* Simplistic_OSXTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		893952F01C89AC7F00D35895 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				893952F91C89AC7F00D35895 /* Simplistic_OSXUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		893952EB1C89AC7F00D35895 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 893952D41C89AC7F00D35895 /* Simplistic */;
+			targetProxy = 893952EA1C89AC7F00D35895 /* PBXContainerItemProxy */;
+		};
+		893952F61C89AC7F00D35895 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 893952D41C89AC7F00D35895 /* Simplistic */;
+			targetProxy = 893952F51C89AC7F00D35895 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		893952E11C89AC7F00D35895 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				893952E21C89AC7F00D35895 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		893952FB1C89AC7F00D35895 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		893952FC1C89AC7F00D35895 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		893952FE1C89AC7F00D35895 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Simplistic-OSX/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.arnaudthiercelin.Simplistic-OSX";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		893952FF1C89AC7F00D35895 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Simplistic-OSX/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.arnaudthiercelin.Simplistic-OSX";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		893953011C89AC7F00D35895 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Simplistic-OSXTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.arnaudthiercelin.Simplistic-OSXTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Simplistic-OSX.app/Contents/MacOS/Simplistic-OSX";
+			};
+			name = Debug;
+		};
+		893953021C89AC7F00D35895 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Simplistic-OSXTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.arnaudthiercelin.Simplistic-OSXTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Simplistic-OSX.app/Contents/MacOS/Simplistic-OSX";
+			};
+			name = Release;
+		};
+		893953041C89AC7F00D35895 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Simplistic-OSXUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.arnaudthiercelin.Simplistic-OSXUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Simplistic-OSX";
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		893953051C89AC7F00D35895 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Simplistic-OSXUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.arnaudthiercelin.Simplistic-OSXUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Simplistic-OSX";
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		893952D01C89AC7F00D35895 /* Build configuration list for PBXProject "Simplistic-OSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				893952FB1C89AC7F00D35895 /* Debug */,
+				893952FC1C89AC7F00D35895 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		893952FD1C89AC7F00D35895 /* Build configuration list for PBXNativeTarget "Simplistic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				893952FE1C89AC7F00D35895 /* Debug */,
+				893952FF1C89AC7F00D35895 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		893953001C89AC7F00D35895 /* Build configuration list for PBXNativeTarget "Simplistic-OSXTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				893953011C89AC7F00D35895 /* Debug */,
+				893953021C89AC7F00D35895 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		893953031C89AC7F00D35895 /* Build configuration list for PBXNativeTarget "Simplistic-OSXUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				893953041C89AC7F00D35895 /* Debug */,
+				893953051C89AC7F00D35895 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		893952DC1C89AC7F00D35895 /* Simplistic_OSX.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				893952DD1C89AC7F00D35895 /* Simplistic_OSX.xcdatamodel */,
+			);
+			currentVersion = 893952DD1C89AC7F00D35895 /* Simplistic_OSX.xcdatamodel */;
+			path = Simplistic_OSX.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 893952CD1C89AC7F00D35895 /* Project object */;
+}
