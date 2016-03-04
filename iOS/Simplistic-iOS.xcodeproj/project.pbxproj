@@ -37,20 +37,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		893952561C81E98600D35895 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 89CEEF091B3E3AAE00063FA6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 893952411C81E98600D35895;
-			remoteInfo = "Simplistic-OSX";
-		};
-		893952611C81E98600D35895 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 89CEEF091B3E3AAE00063FA6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 893952411C81E98600D35895;
-			remoteInfo = "Simplistic-OSX";
-		};
 		89A507981BA3C17700FE0BB5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 89CEEF091B3E3AAE00063FA6 /* Project object */;
@@ -119,9 +105,6 @@
 		8927491F1B795425004F2EAD /* Simplistic WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Simplistic WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		892C3D471C003CCF00804A8B /* MainTableViewController+ApplicationContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MainTableViewController+ApplicationContext.swift"; sourceTree = "<group>"; };
 		892C3D491C00D3FB00804A8B /* InterfaceController+ApplicationContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InterfaceController+ApplicationContext.swift"; sourceTree = "<group>"; };
-		893952421C81E98600D35895 /* Simplistic-OSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simplistic-OSX.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		893952551C81E98600D35895 /* Simplistic-OSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Simplistic-OSXTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		893952601C81E98600D35895 /* Simplistic-OSXUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Simplistic-OSXUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		895A1B0D1B79B60000070CF1 /* Simplistic Sharing Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Simplistic Sharing Extension.entitlements"; sourceTree = "<group>"; };
 		895A1B0E1B7A94D000070CF1 /* MainTableViewController+WCSessionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MainTableViewController+WCSessionDelegate.swift"; sourceTree = "<group>"; };
 		895A1B101B7A9BCD00070CF1 /* InterfaceController+WCSessionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InterfaceController+WCSessionDelegate.swift"; sourceTree = "<group>"; };
@@ -164,27 +147,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		8939523F1C81E98600D35895 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		893952521C81E98600D35895 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8939525D1C81E98600D35895 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		89CEEF0E1B3E3AAE00063FA6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -258,9 +220,6 @@
 				89CEEF391B3E3AAE00063FA6 /* Simplistic.app */,
 				89CEEF481B3E3AAE00063FA6 /* Simplistic.appex */,
 				89CEEF731B3E3CA500063FA6 /* Simplistic Sharing Extension.appex */,
-				893952421C81E98600D35895 /* Simplistic-OSX.app */,
-				893952551C81E98600D35895 /* Simplistic-OSXTests.xctest */,
-				893952601C81E98600D35895 /* Simplistic-OSXUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -352,60 +311,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		893952411C81E98600D35895 /* Simplistic-OSX */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 893952671C81E98600D35895 /* Build configuration list for PBXNativeTarget "Simplistic-OSX" */;
-			buildPhases = (
-				8939523E1C81E98600D35895 /* Sources */,
-				8939523F1C81E98600D35895 /* Frameworks */,
-				893952401C81E98600D35895 /* Resources */,
-				893952721C81EA1600D35895 /* Additional Warnings */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Simplistic-OSX";
-			productName = "Simplistic-OSX";
-			productReference = 893952421C81E98600D35895 /* Simplistic-OSX.app */;
-			productType = "com.apple.product-type.application";
-		};
-		893952541C81E98600D35895 /* Simplistic-OSXTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8939526A1C81E98600D35895 /* Build configuration list for PBXNativeTarget "Simplistic-OSXTests" */;
-			buildPhases = (
-				893952511C81E98600D35895 /* Sources */,
-				893952521C81E98600D35895 /* Frameworks */,
-				893952531C81E98600D35895 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				893952571C81E98600D35895 /* PBXTargetDependency */,
-			);
-			name = "Simplistic-OSXTests";
-			productName = "Simplistic-OSXTests";
-			productReference = 893952551C81E98600D35895 /* Simplistic-OSXTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		8939525F1C81E98600D35895 /* Simplistic-OSXUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8939526D1C81E98600D35895 /* Build configuration list for PBXNativeTarget "Simplistic-OSXUITests" */;
-			buildPhases = (
-				8939525C1C81E98600D35895 /* Sources */,
-				8939525D1C81E98600D35895 /* Frameworks */,
-				8939525E1C81E98600D35895 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				893952621C81E98600D35895 /* PBXTargetDependency */,
-			);
-			name = "Simplistic-OSXUITests";
-			productName = "Simplistic-OSXUITests";
-			productReference = 893952601C81E98600D35895 /* Simplistic-OSXUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 		89CEEF101B3E3AAE00063FA6 /* Simplistic */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 89CEEF661B3E3AAF00063FA6 /* Build configuration list for PBXNativeTarget "Simplistic" */;
@@ -525,17 +430,6 @@
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Arnaud Thiercelin";
 				TargetAttributes = {
-					893952411C81E98600D35895 = {
-						CreatedOnToolsVersion = 7.2.1;
-					};
-					893952541C81E98600D35895 = {
-						CreatedOnToolsVersion = 7.2.1;
-						TestTargetID = 893952411C81E98600D35895;
-					};
-					8939525F1C81E98600D35895 = {
-						CreatedOnToolsVersion = 7.2.1;
-						TestTargetID = 893952411C81E98600D35895;
-					};
 					89CEEF101B3E3AAE00063FA6 = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = 6NMM9JPECT;
@@ -604,35 +498,11 @@
 				89CEEF381B3E3AAE00063FA6 /* Simplistic WatchKit App */,
 				89CEEF471B3E3AAE00063FA6 /* Simplistic WatchKit Extension */,
 				89CEEF721B3E3CA500063FA6 /* Simplistic Sharing Extension */,
-				893952411C81E98600D35895 /* Simplistic-OSX */,
-				893952541C81E98600D35895 /* Simplistic-OSXTests */,
-				8939525F1C81E98600D35895 /* Simplistic-OSXUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		893952401C81E98600D35895 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		893952531C81E98600D35895 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8939525E1C81E98600D35895 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		89CEEF0F1B3E3AAE00063FA6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -714,44 +584,9 @@
 			shellPath = /bin/sh;
 			shellScript = "KEYWORDS=\"TODO:|FIXME:|\\?\\?\\?:|\\!\\!\\!:\"\nfind \"${SRCROOT}\" \\( -name \"*.h\" -or -name \"*.m\" -or -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($KEYWORDS).*\\$\" | perl -p -e \"s/($KEYWORDS)/ warning: \\$1/\"";
 		};
-		893952721C81EA1600D35895 /* Additional Warnings */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Additional Warnings";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "KEYWORDS=\"TODO:|FIXME:|\\?\\?\\?:|\\!\\!\\!:\"\nfind \"${SRCROOT}\" \\( -name \"*.h\" -or -name \"*.m\" -or -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($KEYWORDS).*\\$\" | perl -p -e \"s/($KEYWORDS)/ warning: \\$1/\"";
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		8939523E1C81E98600D35895 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		893952511C81E98600D35895 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8939525C1C81E98600D35895 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		89CEEF0D1B3E3AAE00063FA6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -806,16 +641,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		893952571C81E98600D35895 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 893952411C81E98600D35895 /* Simplistic-OSX */;
-			targetProxy = 893952561C81E98600D35895 /* PBXContainerItemProxy */;
-		};
-		893952621C81E98600D35895 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 893952411C81E98600D35895 /* Simplistic-OSX */;
-			targetProxy = 893952611C81E98600D35895 /* PBXContainerItemProxy */;
-		};
 		89A507991BA3C17700FE0BB5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 89CEEF721B3E3CA500063FA6 /* Simplistic Sharing Extension */;
@@ -879,100 +704,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		893952681C81E98600D35895 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = "Simplistic-OSX/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.arnaudthiercelin.Simplistic-OSX";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-			};
-			name = Debug;
-		};
-		893952691C81E98600D35895 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = "Simplistic-OSX/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.arnaudthiercelin.Simplistic-OSX";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-			};
-			name = Release;
-		};
-		8939526B1C81E98600D35895 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = "Simplistic-OSXTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.arnaudthiercelin.Simplistic-OSXTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Simplistic-OSX.app/Contents/MacOS/Simplistic-OSX";
-			};
-			name = Debug;
-		};
-		8939526C1C81E98600D35895 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = "Simplistic-OSXTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.arnaudthiercelin.Simplistic-OSXTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Simplistic-OSX.app/Contents/MacOS/Simplistic-OSX";
-			};
-			name = Release;
-		};
-		8939526E1C81E98600D35895 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = "Simplistic-OSXUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.arnaudthiercelin.Simplistic-OSXUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				TEST_TARGET_NAME = "Simplistic-OSX";
-				USES_XCTRUNNER = YES;
-			};
-			name = Debug;
-		};
-		8939526F1C81E98600D35895 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = "Simplistic-OSXUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.arnaudthiercelin.Simplistic-OSXUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				TEST_TARGET_NAME = "Simplistic-OSX";
-				USES_XCTRUNNER = YES;
-			};
-			name = Release;
-		};
 		89CEEF5C1B3E3AAF00063FA6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1249,33 +980,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		893952671C81E98600D35895 /* Build configuration list for PBXNativeTarget "Simplistic-OSX" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				893952681C81E98600D35895 /* Debug */,
-				893952691C81E98600D35895 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		8939526A1C81E98600D35895 /* Build configuration list for PBXNativeTarget "Simplistic-OSXTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8939526B1C81E98600D35895 /* Debug */,
-				8939526C1C81E98600D35895 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		8939526D1C81E98600D35895 /* Build configuration list for PBXNativeTarget "Simplistic-OSXUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8939526E1C81E98600D35895 /* Debug */,
-				8939526F1C81E98600D35895 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		89CEEF0C1B3E3AAE00063FA6 /* Build configuration list for PBXProject "Simplistic-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
