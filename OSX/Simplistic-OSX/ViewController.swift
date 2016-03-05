@@ -8,8 +8,11 @@
 
 import Cocoa
 
-class ViewController: NSViewController {
+class ViewController: NSViewController, NSTableViewDelegate {
 
+	@IBOutlet var listTableView: NSTableView!
+	var listTableViewDataSource = ListTableViewDataSource()
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
@@ -23,5 +26,13 @@ class ViewController: NSViewController {
 	}
 
 
+	//MARK: - TableViewDelegate
+	
+	func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
+		let cellView = tableView.makeViewWithIdentifier("itemCellView", owner: self)
+		
+		// setup here
+		return cellView
+	}
 }
 

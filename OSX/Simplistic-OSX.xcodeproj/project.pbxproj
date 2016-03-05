@@ -14,6 +14,8 @@
 		893952E31C89AC7F00D35895 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 893952E11C89AC7F00D35895 /* Main.storyboard */; };
 		893952EE1C89AC7F00D35895 /* Simplistic_OSXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893952ED1C89AC7F00D35895 /* Simplistic_OSXTests.swift */; };
 		893952F91C89AC7F00D35895 /* Simplistic_OSXUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893952F81C89AC7F00D35895 /* Simplistic_OSXUITests.swift */; };
+		893953071C8B3CAA00D35895 /* ListTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893953061C8B3CAA00D35895 /* ListTableViewDataSource.swift */; };
+		893953091C8B3D7800D35895 /* ListItemCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893953081C8B3D7800D35895 /* ListItemCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		893952F41C89AC7F00D35895 /* Simplistic-OSXUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Simplistic-OSXUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		893952F81C89AC7F00D35895 /* Simplistic_OSXUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Simplistic_OSXUITests.swift; sourceTree = "<group>"; };
 		893952FA1C89AC7F00D35895 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		893953061C8B3CAA00D35895 /* ListTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewDataSource.swift; sourceTree = "<group>"; };
+		893953081C8B3D7800D35895 /* ListItemCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListItemCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,8 @@
 			children = (
 				893952D81C89AC7F00D35895 /* AppDelegate.swift */,
 				893952DA1C89AC7F00D35895 /* ViewController.swift */,
+				893953061C8B3CAA00D35895 /* ListTableViewDataSource.swift */,
+				893953081C8B3D7800D35895 /* ListItemCellView.swift */,
 				893952DF1C89AC7F00D35895 /* Assets.xcassets */,
 				893952E11C89AC7F00D35895 /* Main.storyboard */,
 				893952E41C89AC7F00D35895 /* Info.plist */,
@@ -255,8 +261,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				893953091C8B3D7800D35895 /* ListItemCellView.swift in Sources */,
 				893952DB1C89AC7F00D35895 /* ViewController.swift in Sources */,
 				893952D91C89AC7F00D35895 /* AppDelegate.swift in Sources */,
+				893953071C8B3CAA00D35895 /* ListTableViewDataSource.swift in Sources */,
 				893952DE1C89AC7F00D35895 /* Simplistic_OSX.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -479,6 +487,7 @@
 				893952FF1C89AC7F00D35895 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		893953001C89AC7F00D35895 /* Build configuration list for PBXNativeTarget "Simplistic-OSXTests" */ = {
 			isa = XCConfigurationList;
@@ -487,6 +496,7 @@
 				893953021C89AC7F00D35895 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		893953031C89AC7F00D35895 /* Build configuration list for PBXNativeTarget "Simplistic-OSXUITests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +505,7 @@
 				893953051C89AC7F00D35895 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

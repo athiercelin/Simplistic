@@ -699,7 +699,7 @@
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView focusRingType="none" id="r9L-a5-nXU">
+                                                        <tableCellView identifier="itemCellView" focusRingType="none" id="r9L-a5-nXU" customClass="ListItemCellView">
                                                             <rect key="frame" x="1" y="1" width="475" height="60"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
