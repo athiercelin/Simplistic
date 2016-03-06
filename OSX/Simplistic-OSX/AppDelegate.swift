@@ -27,7 +27,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	    // The directory the application uses to store the Core Data store file. This code uses a directory named "com.arnaudthiercelin.Simplistic_OSX" in the user's Application Support directory.
 	    let urls = NSFileManager.defaultManager().URLsForDirectory(.ApplicationSupportDirectory, inDomains: .UserDomainMask)
 	    let appSupportURL = urls[urls.count - 1]
-	    return appSupportURL.URLByAppendingPathComponent("com.arnaudthiercelin.Simplistic_OSX")
+	    return appSupportURL.URLByAppendingPathComponent("com.arnaudthiercelin.simplistic-osx")
 	}()
 
 	lazy var managedObjectModel: NSManagedObjectModel = {
