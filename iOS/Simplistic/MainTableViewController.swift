@@ -12,7 +12,7 @@ import WatchConnectivity
 
 class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFetchedResultsControllerDelegate {
 	
-	let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+	let appDelegate = UIApplication.shared().delegate as! AppDelegate
 	
 	var cellUnDoneBackGroundColor = UIColor(red: 0.658102, green: 0.926204, blue: 0.673501, alpha: 1)
 	var cellDoneBackGroundColor = UIColor(red: 0.926204, green: 0.658102, blue: 0.673501, alpha: 1)
@@ -64,7 +64,7 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFet
 		}
 	}
 	
-	var fetchedResultsController: NSFetchedResultsController! = nil
+	var fetchedResultsController: NSFetchedResultsController!? = nil
 	
 	var session: WCSession? = nil
 	
@@ -117,14 +117,14 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFet
 	
 	func setupWatchKit() {
 		if WCSession.isSupported() {
-			self.session = WCSession.defaultSession()
+			self.session = WCSession.default()
 			self.session!.delegate = self
-			self.session!.activateSession()
+			self.session!.activate()
 		}
 	}
 	
 	func setupCoreDate() {
-		let applicationDocumentDirectory = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).last
+		let applicationDocumentDirectory = FileManager.default().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).last
 		let storeURL = applicationDocumentDirectory?.URLByAppendingPathComponent("SimplisticModel.sqllite")
 		
 		do {
@@ -135,12 +135,12 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFet
 		}
 		
 		let fetchRequest = NSFetchRequest()
-		let entity = NSEntityDescription.entityForName("Items", inManagedObjectContext: self.managedObjectContext)
+		let entity = NSEntityDescription.entity(forEntityName: "Items", in: self.managedObjectContext)
 		
 		fetchRequest.entity = entity
 		fetchRequest.fetchBatchSize = 0
 		
-		let positionSortDescriptor = NSSortDescriptor(key: "position", ascending: true)
+		let positionSortDescriptor = SortDescriptor(key: "position", ascending: true)
 		let sortDescriptors = [positionSortDescriptor]
 		
 		fetchRequest.sortDescriptors = sortDescriptors
@@ -149,7 +149,7 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFet
 		self.fetchedResultsController.delegate = self
 	}
 	
-	override func viewWillAppear(animated: Bool) {
+	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		
 		// load the data from coreData.
@@ -193,7 +193,7 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFet
 		}
 	}
 	
-	override func viewDidAppear(animated: Bool) {
+	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
 		self.updateHelperViewVisibility()
 		self.setApplicationContext()
@@ -208,7 +208,7 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFet
 	// MARK: - Content Creation
 	
 	func addAction(recognizer: UILongPressGestureRecognizer) {
-		if recognizer.state != UIGestureRecognizerState.Began {
+		if recognizer.state != UIGestureRecognizerState.began {
 			return
 		}
 		
@@ -221,7 +221,7 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFet
 				let currentColor = self.currentlyEditedCell?.layer.backgroundColor
 				
 				self.currentlyEditedCell?.layer.transform = flashAnim
-				self.currentlyEditedCell?.layer.backgroundColor = UIColor(red: 1, green: 0.4, blue: 0.4, alpha: 1.0).CGColor
+				self.currentlyEditedCell?.layer.backgroundColor = UIColor(red: 1, green: 0.4, blue: 0.4, alpha: 1.0).cgColor
 				
 				UIView.beginAnimations("flashAnim", context: nil)
 				UIView.setAnimationDuration(0.8)
@@ -309,45 +309,45 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFet
 			self.view.addSubview(self.helpView)
 			self.helpView.translatesAutoresizingMaskIntoConstraints = false
 			self.view.addConstraint(NSLayoutConstraint(item: self.helpView,
-				attribute: .Leading,
-				relatedBy: .Equal,
+				attribute: .leading,
+				relatedBy: .equal,
 				toItem: self.view,
-				attribute: .Leading,
+				attribute: .leading,
 				multiplier: 1,
 				constant: 0))
 			self.view.addConstraint(NSLayoutConstraint(item: self.helpView,
-				attribute: .Trailing,
-				relatedBy: .Equal,
+				attribute: .trailing,
+				relatedBy: .equal,
 				toItem: self.view,
-				attribute: .Trailing,
+				attribute: .trailing,
 				multiplier: 1,
 				constant: 0))
 			self.view.addConstraint(NSLayoutConstraint(item: self.helpView,
-				attribute: .Top,
-				relatedBy: .Equal,
+				attribute: .top,
+				relatedBy: .equal,
 				toItem: self.view,
-				attribute: .Top,
+				attribute: .top,
 				multiplier: 1,
 				constant: 0))
 			self.view.addConstraint(NSLayoutConstraint(item: self.helpView,
-				attribute: .Bottom,
-				relatedBy: .Equal,
+				attribute: .bottom,
+				relatedBy: .equal,
 				toItem: self.view,
-				attribute: .Bottom,
+				attribute: .bottom,
 				multiplier: 1,
 				constant: 0))
 			self.view.addConstraint(NSLayoutConstraint(item: self.helpView,
-				attribute: .CenterX,
-				relatedBy: .Equal,
+				attribute: .centerX,
+				relatedBy: .equal,
 				toItem: self.view,
-				attribute: .CenterX,
+				attribute: .centerX,
 				multiplier: 1,
 				constant: 0))
 			self.view.addConstraint(NSLayoutConstraint(item: self.helpView,
-				attribute: .CenterY,
-				relatedBy: .Equal,
+				attribute: .centerY,
+				relatedBy: .equal,
 				toItem: self.view,
-				attribute: .CenterY,
+				attribute: .centerY,
 				multiplier: 1,
 				constant: 0))
 		} else if self.helpView.superview != nil {
@@ -381,32 +381,33 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate, NSFet
 		}
 		
 		if new == true {
-			cell.itemLabel.hidden = true
-			cell.itemField.hidden = false
+			cell.itemLabel.isHidden = true
+			cell.itemField.isHidden = false
 			cell.itemField.becomeFirstResponder()
 			cell.itemField.delegate = self;
 		}
 		else {
-			cell.itemLabel.hidden = false
-			cell.itemField.hidden = true
+			cell.itemLabel.isHidden = false
+			cell.itemField.isHidden = true
 		}
 	}
 	
 	// MARK: - Table view data source
 	
-	override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+	// double check this one.
+	func numberOfSectionsInTableView(tableView: UITableView) -> Int {
 		return 1
 	}
 	
-	override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		let sectionInfo = self.fetchedResultsController.sections![section]
 		
 		return sectionInfo.numberOfObjects
 	}
 	
 	
-	override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCellWithIdentifier("mainCell", forIndexPath: indexPath) as! MainTableViewCell
+	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+		let cell = tableView.dequeueReusableCell(withIdentifier: "mainCell", for: indexPath as IndexPath) as! MainTableViewCell
 		
 		self.configureCell(cell, atIndexPath: indexPath)
 		

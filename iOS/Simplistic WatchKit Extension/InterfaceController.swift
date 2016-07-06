@@ -19,8 +19,8 @@ class InterfaceController: WKInterfaceController {
 	
 	var session: WCSession? = nil
 	
-	override func awakeWithContext(context: AnyObject?) {
-		super.awakeWithContext(context)
+	override func awake(withContext context: AnyObject?) {
+		super.awake(withContext: context)
 		
 		// Configure interface objects here.
 		
@@ -31,10 +31,10 @@ class InterfaceController: WKInterfaceController {
 		super.willActivate()
 		
 		if WCSession.isSupported() {
-			self.session = WCSession.defaultSession()
+			self.session = WCSession.default()
 			self.session!.delegate = self
-			self.session!.activateSession()
-			self.useApplicationContext(self.session!.applicationContext)
+			self.session!.activate()
+			self.useApplicationContext(applicationContext: self.session!.applicationContext)
 		} else {
 			//FIXME: implem here
 		}

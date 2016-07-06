@@ -21,8 +21,12 @@ extension InterfaceController: WCSessionDelegate {
 	}
 	
 	func session(session: WCSession, didReceiveApplicationContext applicationContext: [String : AnyObject]) {
-		self.useApplicationContext(applicationContext)
+		self.useApplicationContext(applicationContext: applicationContext)
 	}
 
+	@available(watchOSApplicationExtension 2.2, *)
+	func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: NSError?) {
+		// TODO:
+	}
 	
 }
