@@ -16,12 +16,13 @@ extension InterfaceController {
 		NSLog("Setting the Application Context")
 		var itemId = 0
 		var newArray = [[String:AnyObject]]()
-		while let rowController = self.mainTable.rowControllerAtIndex(itemId++) {
+		while let rowController = self.mainTable.rowController(at: itemId) {
 			let itemRowController = rowController as! ItemsRowController
 			
 			let newDictionary:[String:AnyObject] = ["label" : itemRowController.labelString,
 				"done" : itemRowController.doneStatus]
 			newArray.append(newDictionary)
+			itemId
 		}
 		do {
 			try self.session!.updateApplicationContext(["result":newArray])
@@ -39,13 +40,13 @@ extension InterfaceController {
 		
 		NSLog("data received: %@", arrayResults as! NSArray)
 		
-		dispatch_async(dispatch_get_main_queue()) { () -> Void in
+		dispatchMain() { () -> Void in
 			
 			let numberOfItems = arrayResults!.count
 			
-			self.mainTable.setNumberOfRows(numberOfItems, withRowType: "ItemsRow")
+			self.mainTable.setNumberOfRows(numberOfItems!, withRowType: "ItemsRow")
 			
-			for var index = 0; index < self.mainTable.numberOfRows; index++ {
+			for index in 0 ..< self.mainTable.numberOfRows {
 				let dictionary = arrayResults?.objectAtIndex(index)
 				let rowController = self.mainTable.rowControllerAtIndex(index) as! ItemsRowController
 				let done = dictionary?.objectForKey("done") as! Bool

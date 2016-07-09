@@ -1,3 +1,5 @@
+*NOTES (Jul 08, 2016): I've abandonned this project since Apple brought the reminder's app to the watch. This is completly redundant and will only be used for experimentation on my side. *
+
 # <img src='https://github.com/athiercelin/Simplistic/blob/master/mdImages/Simplistic_icon.png?raw=true' width='30' /> Simplistic
 
 <center><a href='https://itunes.apple.com/us/app/simplistic/id1013231982?ls=1&mt=8'><img src='https://github.com/athiercelin/Simplistic/blob/master/mdImages/Download_on_the_App_Store_Badge_US.png?raw=true' width='150' /></a></center>

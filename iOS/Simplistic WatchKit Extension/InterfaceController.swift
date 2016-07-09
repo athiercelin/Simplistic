@@ -45,19 +45,19 @@ class InterfaceController: WKInterfaceController {
 		super.didDeactivate()
 	}
 	
-	override func table(table: WKInterfaceTable, didSelectRowAtIndex rowIndex: Int) {
-		let rowController = table.rowControllerAtIndex(rowIndex) as! ItemsRowController
+	override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
+		let rowController = table.rowController(at: rowIndex) as! ItemsRowController
 		let itemId = rowIndex
 		let itemLabel = rowController.labelString
 		let doneStatus = rowController.doneStatus
 		
-		self.setDoneStatus(!doneStatus, forItemWithId: itemId, andLabel: itemLabel)
+		self.setDoneStatus(doneStatus: !doneStatus, forItemWithId: itemId, andLabel: itemLabel)
 	}
 	
 	func setDoneStatus(doneStatus: Bool, forItemWithId itemId: Int, andLabel label: String) {
 		NSLog("Setting Done on item %@ at position %d", label, itemId)
 		
-		let rowController = self.mainTable.rowControllerAtIndex(itemId) as! ItemsRowController
+		let rowController = self.mainTable.rowController(at: itemId) as! ItemsRowController
 		
 		rowController.doneStatus = doneStatus
 		let attributedText = NSMutableAttributedString(string: rowController.labelString)
@@ -76,7 +76,7 @@ class InterfaceController: WKInterfaceController {
 	
 	@IBAction func deleteDoneItems() {
 		NSLog("Deleting Done Items")
-		if self.session!.reachable {
+		if self.session!.isReachable {
 			// Removed for now AT 2015-11
 		}
 	}
