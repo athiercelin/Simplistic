@@ -1,4 +1,4 @@
-**NOTES (Jul 08, 2016): I've abandonned this project since Apple brought the reminder's app to the watch. This is completly redundant and will only be used for experimentation on my side.**
+**NOTES (Jul 08, 2016): I've abandoned this project since Apple brought the reminder's app to the watch. This is completly redundant and will only be used for experimentation on my side.**
 
 # <img src='https://github.com/athiercelin/Simplistic/blob/master/mdImages/Simplistic_icon.png?raw=true' width='30' /> Simplistic
 
